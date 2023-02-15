@@ -1,0 +1,2 @@
+- every page has folder with js and css 
+- 
