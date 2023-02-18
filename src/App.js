@@ -1,9 +1,12 @@
 import "./App.css";
+import Home from "./Pages/Home/Home";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
-      Welcome Back with E-commerce Website <h2>Updated Second </h2>
+      <Header />
+      <Home />
     </>
   );
 }
