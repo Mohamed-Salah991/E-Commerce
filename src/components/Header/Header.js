@@ -11,7 +11,7 @@ import shoppingCart from "../../assets/shopping-cart.png";
 import user from "../../assets/user.png";
 
 function Header() {
-  const test = 50;
+  const test = 9;
   return (
     <nav className={classes.header}>
       <div className="container">
@@ -34,6 +34,7 @@ function Header() {
                 <img src={heart} alt="heart" />
                 <span>5</span>
               </li>
+
               <li>
                 <img src={shoppingCart} alt="shoppingCart" />
                 <span>{test}</span>
