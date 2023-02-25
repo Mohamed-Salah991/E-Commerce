@@ -12,6 +12,7 @@ function InfiniteSlider() {
     process.env.PUBLIC_URL + `Slider/img2.jpg`,
     process.env.PUBLIC_URL + `Slider/img3.jpg`,
   ];
+
   return (
     <div className={classes["infinity-slider"]}>
       <div className={classes["slider-container"]}>

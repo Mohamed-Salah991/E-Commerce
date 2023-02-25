@@ -7,6 +7,7 @@ function Home() {
     <>
       <HeroSection />
       <InfiniteSlider />
+      
     </>
   );
 }
