@@ -22,6 +22,7 @@ function Header() {
           </div>
         </div>
       </header>
+
       <header className="header-upper py-3">
         <div className="container-xxl">
           <div className="row align-items-center">
@@ -76,10 +77,20 @@ function Header() {
                     <div className="d-flex flex-column gap-10">
                       <span className="badge bg-white text-dark">0</span>
                       <p className="mb-0">$ 5000</p>
-                    </div >
+                    </div>
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <header className="header-bottom py-3">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <div className="menu-bottom"></div>
             </div>
           </div>
         </div>
