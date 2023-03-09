@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Header.module.css";
-import HeaderSearch from "./Header-Search/HeaderSearch";
+import HeaderSearch from "./HeaderSearch";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faHeart } from "@fortawesome/free-regular-svg-icons";
 // Image

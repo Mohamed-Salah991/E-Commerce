@@ -5,10 +5,10 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import banner from "../../../assets/Home Page/banner.jpg";
-import offImage1 from "../../../assets/Home Page/promotion_1.jpeg";
-import offImage2 from "../../../assets/Home Page/promotion_2.jpeg";
-import Slider from "../../Slider/Slider";
+import banner from "../../assets/Home Page/banner.jpg";
+import offImage1 from "../../assets/Home Page/promotion_1.jpeg";
+import offImage2 from "../../assets/Home Page/promotion_2.jpeg";
+import Slider from "../Slider/Slider";
 
 function HeroSection() {
   const sliderData = [
@@ -20,14 +20,7 @@ function HeroSection() {
   return (
     <div className={classes.slider}>
       <div className={classes.banner}>
-        {/* <span className={classes.leftArrow}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </span> */}
-
         <Slider />
-        {/* <span className={classes.rightArrow}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </span> */}
       </div>
       <div className={classes["right-side"]}>
         <img src={offImage1} alt="" />

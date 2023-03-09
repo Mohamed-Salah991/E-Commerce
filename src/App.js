@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Home from "./Pages/Home/Home";
-import Header from "./components/Header/Header";
+import Home from "./Pages/Home";
+import Header from "./common/Header/Header";
 
-const ProducstLit = [
+const ProductsLit = [
   {
     id: 1,
     title: "iPhone 9",
