@@ -45,7 +45,11 @@
 .control-btn {
   outline: none;
   border: none;
-  background-color: transparent;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee;
 }
 
 .arrow {

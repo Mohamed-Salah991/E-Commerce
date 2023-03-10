@@ -5,6 +5,7 @@ import { GoPlus } from "react-icons/go";
 import { HiOutlineHeart } from "react-icons/hi";
 import { HiViewfinderCircle } from "react-icons/hi2";
 import { FiBarChart2 } from "react-icons/fi";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 function ProductItem(props) {
   const { image, title, price, rate } = props;
@@ -21,9 +22,13 @@ function ProductItem(props) {
           onClick={addToWishList}
           className={wishList && classes.active}
         />
-        <HiViewfinderCircle />
+        <MdOutlineRemoveRedEye />
         <FiBarChart2 />
       </span>
+      {props?.discount && (
+        <span className={classes.discount}>{props.discount}% off</span>
+      )}
+
       <div className={classes.image}>
         <img src={image} className={classes.img} alt={title} />
       </div>
