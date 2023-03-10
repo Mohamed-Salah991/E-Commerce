@@ -1,0 +1,96 @@
+.item {
+  position: relative;
+  background: #fff;
+  padding: 5px 10px 5px 5px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 400px; */
+  /* width: 80%; */
+  /* width: calc(100% / 4 - 30px); */
+  margin: 20px;
+
+  box-shadow: rgb(3 0 71 / 9%) 3px 3px 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.item .right-items {
+  position: absolute;
+  top: 10%;
+  right: -30px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.item .right-items svg {
+  display: inline-block;
+  margin: 8px 0;
+  font-size: 28px;
+  color: #e94560;
+  color: black;
+  transition: all 0.3s ease;
+}
+.item .right-items .active {
+  fill: #e94560;
+  color: #e94560;
+}
+
+.item .right-items svg:hover {
+  color: #e94560;
+  cursor: pointer;
+}
+.item:hover .right-items {
+  right: 13px;
+}
+.image {
+  height: 70%;
+}
+.img {
+  width: 100%;
+  cursor: pointer;
+}
+.info-text {
+  padding: 5px 15px;
+}
+.star {
+  font-size: 20px;
+  color: #ffcd4e;
+  margin: 5px 0;
+  cursor: default;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 18px;
+}
+.title:hover {
+  cursor: pointer;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  color: #e94560;
+  font-size: 18px;
+}
+
+.button {
+  background: none;
+  color: #e94560;
+  font-size: 20px;
+  transition: 0.5s;
+  border: 1px solid rgb(3 0 71 / 9%);
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #e94560;
+  color: #fff;
+}

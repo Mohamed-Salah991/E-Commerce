@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./HeaderSearch.module.css";
+import classes from "./Search.module.css";
 
-function HeaderSearch() {
+function Search() {
   return (
     <>
       <input
@@ -15,4 +15,4 @@ function HeaderSearch() {
   );
 }
 
-export default HeaderSearch;
+export default Search;

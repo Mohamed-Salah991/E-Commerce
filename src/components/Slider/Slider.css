@@ -77,3 +77,21 @@
 .dot.active {
   background: rgb(32, 32, 32);
 }
+
+.icon {
+  position: relative;
+  top: 50%;
+  left: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.icon svg {
+  font-size: 40px;
+}

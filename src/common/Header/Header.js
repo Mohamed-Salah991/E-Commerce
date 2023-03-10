@@ -1,14 +1,11 @@
 import React from "react";
 import classes from "./Header.module.css";
-import HeaderSearch from "./HeaderSearch";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHeart } from "@fortawesome/free-regular-svg-icons";
-// Image
+import Search from "./Search";
 import logo from "../../assets/Online-shop-logo.png";
-import barChart from "../../assets/bar-chart.png";
-import heart from "../../assets/heart.png";
-import shoppingCart from "../../assets/shopping-cart.png";
-import user from "../../assets/user.png";
+import { FiBarChart2 } from "react-icons/fi";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsCart4 } from "react-icons/bs";
+import { FaUser } from "react-icons/fa";
 
 function Header() {
   const test = 9;
@@ -22,25 +19,25 @@ function Header() {
             </a>
           </div>
           <div className={classes.search}>
-            <HeaderSearch />
+            <Search />
           </div>
           <div className={classes.icons}>
             <ul>
               <li>
-                <img src={barChart} alt="barChart" />
+                <FiBarChart2 className={classes.icon} />
                 <span>5</span>
               </li>
               <li>
-                <img src={heart} alt="heart" />
+                <AiOutlineHeart className={classes.icon} />
                 <span>5</span>
               </li>
 
               <li>
-                <img src={shoppingCart} alt="shoppingCart" />
+                <BsCart4 className={classes.icon} />
                 <span>{test}</span>
               </li>
               <li>
-                <img src={user} alt="user" />
+                <FaUser className={classes.icon} />
               </li>
             </ul>
             <h4 className={["use-auth"]}>Login</h4>

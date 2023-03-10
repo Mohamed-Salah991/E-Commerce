@@ -2,6 +2,7 @@
 :root {
   --main-color: #fcb800;
   --hover-main-color: #f3cb5f;
+  --main-padding: 30px;
 }
 /* End Variables */
 /* Start Global Rules  */
@@ -17,38 +18,19 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  height: 2000px;
 }
 ul {
   list-style: none;
 }
 
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-left: auto;
   margin-right: auto;
-}
-/* Small */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-    width: 90%;
-  }
+  width: 100%;
 }
 
-/* Medium */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-    width: 90%;
-  }
-}
-/* Large */
-@media (min-width: 1200px) {
-  .container {
-    /* width: 1170px; */
-    width: 95%;
-  }
-}
 /* End Golbal Rules  */

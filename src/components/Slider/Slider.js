@@ -51,7 +51,6 @@ export default function Slider() {
       })}
       <BtnSlider moveSlide={nextSlide} direction={"next"} />
       <BtnSlider moveSlide={prevSlide} direction={"prev"} />
-
       <div className="container-dots">
         {Array.from({ length: 5 }).map((item, index) => (
           <div

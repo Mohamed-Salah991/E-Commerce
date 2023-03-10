@@ -36,9 +36,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.header .up .icons ul li:hover {
-  background-color: var(--hover-main-color);
-}
 .header .up .icons ul li img {
   width: 27px;
 }
@@ -62,4 +59,10 @@
   display: inline-block;
 }
 
+.icon {
+  font-size: 30px;
+}
+.icon:hover {
+  color: white;
+}
 /* Header Responsive Design  */
