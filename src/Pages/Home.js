@@ -4,6 +4,7 @@ import HeroSection from "../components/Home/HeroSection";
 import InfiniteSlider from "../components/Slider/Infinite Slider/Infinite Slider";
 import NewArrivals from "../components/Home/NewArrivals";
 import Footer from "../components/Home/Footer";
+import Banner from "../components/Home/Banner";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <HeroSection />
       <Discount />
       <NewArrivals />
+      <Banner />
       <InfiniteSlider />
       <Footer />
     </>

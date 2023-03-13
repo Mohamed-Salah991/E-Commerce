@@ -1,0 +1,16 @@
+.banner {
+  padding: 50px 30px;
+}
+.banner .content {
+  display: flex;
+  justify-content: center;
+
+  gap: 30px;
+}
+.banner .content img {
+  border-radius: 10px;
+}
+.banner .content img:hover {
+  cursor: pointer;
+  box-shadow: rgb(3 0 71 / 9%) 5px 5px 5px;
+}
