@@ -5,6 +5,7 @@ import InfiniteSlider from "../components/Slider/Infinite Slider/Infinite Slider
 import NewArrivals from "../components/Home/NewArrivals";
 import Footer from "../components/Home/Footer";
 import Banner from "../components/Home/Banner";
+import Trust from "../components/Home/Trust";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <NewArrivals />
       <Banner />
       <InfiniteSlider />
+      <Trust />
       <Footer />
     </>
   );

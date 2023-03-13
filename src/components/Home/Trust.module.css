@@ -1,0 +1,42 @@
+.trust {
+  padding: 100px 40px;
+}
+
+.trust .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.box-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.box-info:hover {
+  box-shadow: rgb(3 0 71 / 9%) 5px 5px 5px;
+}
+.box-info span svg {
+  font-size: 25px;
+}
+
+.box-info span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #eee;
+  padding: 5px;
+  border-radius: 50%;
+}
+.box-info h4 {
+  font-weight: 600;
+  margin-top: 20px;
+}
