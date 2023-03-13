@@ -3,6 +3,7 @@ import Discount from "../components/Home/Discount";
 import HeroSection from "../components/Home/HeroSection";
 import InfiniteSlider from "../components/Slider/Infinite Slider/Infinite Slider";
 import NewArrivals from "../components/Home/NewArrivals";
+import Footer from "../components/Home/Footer";
 
 function Home() {
   return (
@@ -10,6 +11,8 @@ function Home() {
       <HeroSection />
       <Discount />
       <NewArrivals />
+      <InfiniteSlider />
+      <Footer />
     </>
   );
 }

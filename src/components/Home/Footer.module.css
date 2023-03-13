@@ -1,0 +1,14 @@
+.footer {
+  background-color: rgb(15, 52, 96);
+  color: white;
+}
+
+.footer .content{
+  display: grid; 
+  
+}
+
+
+.company-info img {
+  width: 150px;
+}

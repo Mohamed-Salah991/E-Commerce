@@ -29,6 +29,7 @@ function NewArrivals() {
       price: 492,
     },
   ];
+
   return (
     <div className={classes["new-arrivals"]}>
       <h2 className={classes.h2}>New Arrivals </h2>
