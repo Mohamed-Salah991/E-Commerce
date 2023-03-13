@@ -1,14 +1,85 @@
 .footer {
   background-color: rgb(15, 52, 96);
-  color: white;
+  color: rgb(174, 180, 190);
+  padding: 70px 120px;
+  padding-bottom: 50px;
+  font-size: 15px;
 }
 
-.footer .content{
-  display: grid; 
-  
+.footer .content {
+  display: grid;
+  grid-template-columns: 400px repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
+.company-info {
+  display: flex;
+  flex-direction: column;
+}
 
 .company-info img {
-  width: 150px;
+  width: 120px;
+}
+.company-info p {
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+.links-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #fff;
+}
+.links-box ul li a {
+  color: rgb(174, 180, 190);
+}
+
+.links-box ul li {
+  padding: 8px 0;
+}
+.links-box ul li a:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.contact-us p {
+  margin: 10px 0;
+}
+
+.contact-us .media ul {
+  display: flex;
+}
+
+.contact-us .media ul li {
+  margin: 10px;
+}
+
+.contact-us .media ul li svg {
+  font-size: 20px;
+}
+
+.contact-us .media ul li svg:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .footer .content {
+    grid-template-columns: 1fr;
+  }
+  .company-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 920px) {
+  .footer .content {
+    grid-template-columns: 1fr;
+  }
 }
