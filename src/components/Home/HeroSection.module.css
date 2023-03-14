@@ -49,3 +49,19 @@
 .rightArrow {
   right: var(--arrow-horizontal);
 }
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .slider {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .banner {
+    width: 100%;
+  }
+  .right-side {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+}

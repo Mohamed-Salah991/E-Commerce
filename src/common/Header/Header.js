@@ -5,13 +5,36 @@ import logo from "../../assets/Online-shop-logo.png";
 import { FiBarChart2 } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
+import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineHome } from "react-icons/ai";
 
 function Header() {
   const test = 9;
   return (
     <nav className={classes.header}>
       <div className="container">
+        <section className={classes["small-screen"]}>
+          <div className={classes["bottom-icons"]}>
+            <ul>
+              <li>
+                <AiOutlineHome />
+                <span>Home</span>
+              </li>
+              <li>
+                <BsCart4 />
+                <span>Cart</span>
+              </li>
+              <li>
+                <AiOutlineHeart />
+                <span>Whish List</span>
+              </li>
+              <li>
+                <AiOutlineUser />
+                <span>Account</span>
+              </li>
+            </ul>
+          </div>
+        </section>
         <section className={classes.up}>
           <div className={classes.logo}>
             <a href="/">
@@ -37,7 +60,7 @@ function Header() {
                 <span>{test}</span>
               </li>
               <li>
-                <FaUser className={classes.icon} />
+                <AiOutlineUser className={classes.icon} />
               </li>
             </ul>
             <h4 className={["use-auth"]}>Login</h4>

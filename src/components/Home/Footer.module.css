@@ -72,6 +72,8 @@
 @media (max-width: 767px) {
   .footer .content {
     grid-template-columns: 1fr;
+    position: relative;
+    bottom: 20px;
   }
   .company-info {
     width: 100%;

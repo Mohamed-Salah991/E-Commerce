@@ -15,8 +15,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.header .up .logo {
-}
+
 .header .up .logo img {
   width: 70px;
 }
@@ -24,10 +23,9 @@
 .header .up .search {
   flex: 1;
   text-align: center;
-  /* background-color: red; */
 }
 .header .up .icons {
-  width: 20%;
+  width: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +47,6 @@
   width: 27px;
 }
 .header .up .icons ul li span {
-  background-color: green;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -60,7 +57,7 @@
   height: 18px;
   border-radius: 50%;
   font-size: 12px;
-  background-color: black;
+  background-color: #e94560;
   color: white;
 }
 
@@ -74,4 +71,50 @@
 .icon:hover {
   color: white;
 }
+.small-screen {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 10px 30px;
+  background-color: #ebf1f9;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px 3px;
+  z-index: 999;
+  display: none;
+}
+.bottom-icons ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bottom-icons ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.bottom-icons ul li svg {
+  display: block;
+  font-size: 20px;
+}
+.bottom-icons ul li span {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 0;
+}
+
+.bottom-icons ul li:hover span,
+.bottom-icons ul li:hover svg {
+  color: tomato;
+}
+
 /* Header Responsive Design  */
+@media (max-width: 768px) {
+  .header .up .icons {
+    display: none;
+  }
+  .small-screen {
+    display: block;
+  }
+}
