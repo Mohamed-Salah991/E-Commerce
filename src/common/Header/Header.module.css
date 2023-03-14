@@ -1,5 +1,14 @@
 .header {
-  background-color: var(--main-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  display: block;
+  background-color: #ebf1f9;
+  box-shadow: rgb(3 0 71 / 9%) 5px 5px 5px;
+
+  /* #d5dee7 , #ebf1f9 */
 }
 .header .up {
   display: flex;

@@ -14,8 +14,8 @@ function Home() {
       <Discount />
       <NewArrivals />
       <Banner />
-      <InfiniteSlider />
       <Trust />
+      <InfiniteSlider />
       <Footer />
     </>
   );

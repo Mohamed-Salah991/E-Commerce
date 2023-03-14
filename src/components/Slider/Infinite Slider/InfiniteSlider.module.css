@@ -31,7 +31,10 @@
   align-items: flex-start;
 }
 .infinity-slider img {
-  width: 200px;
+  width: 170px;
+  height: 40px;
+  filter: brightness(0);
+  opacity: 50%;
 }
 
 @keyframes scroll {

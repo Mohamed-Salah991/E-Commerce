@@ -18,12 +18,14 @@
   /* transform: translateX(-100%); */
   /* transition: opacity ease-in-out 0.4s; */
   transition: all ease-in-out 0.7s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.slide .image {
 }
+
 .active-anim {
   opacity: 1;
   /* transform: translateX(0); */

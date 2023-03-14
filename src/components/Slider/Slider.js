@@ -42,10 +42,12 @@ export default function Slider() {
             key={obj.id}
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
-            <img
-              alt="Slider"
-              src={process.env.PUBLIC_URL + `Slider/img${index + 1}.jpg`}
-            />
+            <div className="image">
+              <img
+                alt="Slider"
+                src={process.env.PUBLIC_URL + `Slider/slide-${index + 1}.png`}
+              />
+            </div>
           </div>
         );
       })}

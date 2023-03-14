@@ -3,14 +3,11 @@ import classes from "./InfiniteSlider.module.css";
 
 function InfiniteSlider() {
   const images = [
-    process.env.PUBLIC_URL + `Slider/img1.jpg`,
-    process.env.PUBLIC_URL + `Slider/img2.jpg`,
-    process.env.PUBLIC_URL + `Slider/img3.jpg`,
-    process.env.PUBLIC_URL + `Slider/img4.jpg`,
-    process.env.PUBLIC_URL + `Slider/img5.jpg`,
-    process.env.PUBLIC_URL + `Slider/img1.jpg`,
-    process.env.PUBLIC_URL + `Slider/img2.jpg`,
-    process.env.PUBLIC_URL + `Slider/img3.jpg`,
+    `logos/business-insider.png`,
+    `logos/forbes.png`,
+    `logos/techcrunch.png`,
+    `logos/the-new-york-times.png`,
+    `logos/usa-today.png`,
   ];
 
   return (
