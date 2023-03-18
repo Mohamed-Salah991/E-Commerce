@@ -74,6 +74,11 @@
   cursor: pointer;
 }
 
+@media (max-width: 400px) {
+  .footer .content {
+    display: block;
+  }
+}
 @media (max-width: 767px) {
   .footer .content {
     grid-template-columns: 1fr;

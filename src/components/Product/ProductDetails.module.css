@@ -7,7 +7,6 @@
 .images {
   width: 50vw;
   height: 23vw;
-  margin-left: 5px;
   display: flex;
   justify-content: center;
   /* align-items: center; */

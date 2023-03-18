@@ -40,3 +40,9 @@
   font-weight: 600;
   margin-top: 20px;
 }
+
+@media (max-width: 350px) {
+  .trust .content {
+    grid-template-columns: unset;
+  }
+}
