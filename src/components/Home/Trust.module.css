@@ -41,7 +41,7 @@
   margin-top: 20px;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .trust .content {
     grid-template-columns: unset;
   }

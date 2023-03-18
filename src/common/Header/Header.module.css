@@ -94,7 +94,30 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
 }
+.bottom-icons ul li:hover {
+  position: relative;
+  transform: translateY(-10px);
+  /* color: #e94560; */
+  font-weight: bold;
+}
+.bottom-icons ul li:nth-child(2)::before {
+  /* content: ""; */
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ebf1f9;
+  z-index: -1;
+  border: 5px solid red;
+}
+.bottom-icons ul li:nth-child(2) {
+}
+
 .bottom-icons ul li svg {
   display: block;
   font-size: 20px;
@@ -107,7 +130,7 @@
 
 .bottom-icons ul li:hover span,
 .bottom-icons ul li:hover svg {
-  color: tomato;
+  /* color: tomato; */
 }
 
 /* Header Responsive Design  */
