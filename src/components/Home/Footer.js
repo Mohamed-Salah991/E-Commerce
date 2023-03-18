@@ -18,7 +18,8 @@ function Footer() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
             voluptatem quibusdam consequatur ad quod tenetur? Placeat molestiae
             quae perferendis repudiandae, eius illo maiores illum soluta
-            obcaecati a, eaque quis eum!
+            obcaecati a, eaque quis eum! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit.
           </p>
           {/* <div className={classes.apps}>
             <div className={classes["app-box"]}>
@@ -42,7 +43,7 @@ function Footer() {
           </div> */}
         </div>
         <div className={classes["links-box"]}>
-          <h3>About Us</h3>
+          <h3 className={classes.title}>About Us</h3>
           <ul>
             <li>
               <a href="/">Careers</a>{" "}
@@ -62,7 +63,7 @@ function Footer() {
           </ul>
         </div>
         <div className={classes["links-box"]}>
-          <h3>Customer Care</h3>
+          <h3 className={classes.title}>Customer Care</h3>
           <ul>
             <li>
               <a href="/"> Careers</a>
@@ -82,7 +83,7 @@ function Footer() {
           </ul>
         </div>
         <div className={classes["contact-us"]}>
-          <h3>Contact Us</h3>
+          <h3 className={classes.title}>Contact Us</h3>
           <p>70 Washington Square South, New York, NY 10012, United States</p>
           <p>
             Email:<a href="/">mohamed.salah6486@gmail.com</a>

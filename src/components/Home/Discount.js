@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Discount.module.css";
 import ProductItem from "../Product/ProductItem";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { BiLeftArrowAlt } from "react-icons/bi";
+import { BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -58,7 +58,7 @@ function Discount() {
     return (
       <div className={classes["control-btn-prev"]} onClick={onClick}>
         <button className={classes["control-btn"]}>
-          <AiOutlineArrowLeft className={classes.arrow} />
+          <BiLeftArrowAlt className={classes.arrow} />
         </button>
       </div>
     );
@@ -69,7 +69,7 @@ function Discount() {
     return (
       <div className={classes["control-btn-next"]} onClick={onClick}>
         <button className={classes["control-btn"]}>
-          <AiOutlineArrowRight className={classes.arrow} />
+          <BiRightArrowAlt className={classes.arrow} />
         </button>
       </div>
     );

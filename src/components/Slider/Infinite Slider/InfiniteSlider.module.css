@@ -23,7 +23,7 @@
   height: 100%;
   gap: 20px;
 
-  animation: scroll 25s linear infinite;
+  animation: scroll 12s linear infinite;
 }
 .content {
   display: flex;
@@ -43,5 +43,11 @@
   }
   100% {
     left: -100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner-container {
+    animation: scroll 8s linear infinite;
   }
 }

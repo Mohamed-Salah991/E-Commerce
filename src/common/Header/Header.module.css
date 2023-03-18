@@ -76,7 +76,7 @@
   bottom: 0;
   left: 0;
   width: 100vw;
-  padding: 10px 30px;
+  padding: 10px 0;
   background-color: #ebf1f9;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px 3px;
   z-index: 999;
@@ -84,7 +84,7 @@
 }
 .bottom-icons ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 .bottom-icons ul li {

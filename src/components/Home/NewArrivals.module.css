@@ -21,6 +21,11 @@
   background-color: #fff;
 }
 
+@media (max-width: 500px) {
+  .items {
+    grid-template-columns: repeat(2, auto);
+  }
+}
 .new-arrivals img {
   width: 100%;
   cursor: pointer;
@@ -65,4 +70,10 @@
   margin-bottom: 0px;
   margin-top: 0px;
   color: rgb(233, 69, 96);
+}
+
+@media (max-width: 768px) {
+  .item h4 {
+    font-size: 15px !important;
+  }
 }
