@@ -7,6 +7,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineHome } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 function Header() {
   const test = 9;

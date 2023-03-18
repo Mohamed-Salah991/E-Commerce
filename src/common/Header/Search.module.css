@@ -38,3 +38,12 @@
     letter-spacing: 0.8px;
   }
 }
+
+@media (max-width: 400px) {
+  .input {
+    width: 50%;
+  }
+  .button {
+    padding: 7px 10px;
+  }
+}

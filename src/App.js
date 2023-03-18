@@ -1,8 +1,33 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home";
-import Header from "./common/Header/Header";
-import MySlider from "./components/My Slider";
+import Shop from "./Pages/Shop";
+import Root from "./Pages/Root";
+import Error from "./Pages/Error";
+import Details from "./Pages/Details";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
+      },
+      {
+        path: "/details",
+        element: <Details />,
+      },
+    ],
+  },
+]);
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -20,12 +45,7 @@ function App() {
 
   console.log(products);
 
-  return (
-    <>
-      <Header />
-      <Home />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

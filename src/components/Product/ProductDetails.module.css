@@ -1,0 +1,97 @@
+.up {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.images {
+  width: 50vw;
+  height: 23vw;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  position: relative;
+}
+
+.images .image img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+/* Information  */
+.info {
+  flex: 1;
+  display: block;
+}
+
+.title h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 0px;
+}
+.brand {
+  color: gray;
+}
+.brand span {
+  color: black;
+}
+.rate {
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.rate span {
+  margin-right: 10px;
+}
+.star {
+  font-size: 20px;
+  color: #ffcd4e;
+  margin: 5px 0;
+  cursor: default;
+}
+
+.price h4 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 4px;
+  margin-top: 0px;
+  color: rgb(233, 69, 96);
+}
+
+.price span {
+  font-size: 14px;
+}
+
+.cart button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  padding: 11px 1.5rem;
+  font-weight: 600;
+  font-family: inherit;
+  background: rgb(233, 69, 96);
+  transition: all 150ms ease-in-out 0s;
+  line-height: 1;
+  border: none;
+  color: rgb(255, 255, 255);
+  height: 40px;
+  font-size: 14px;
+  margin: 30px 0;
+  border-radius: 5px;
+}
+
+.down {
+  padding: 50px 30px;
+}
+.description {
+  width: 60%;
+}
+.description h3 {
+  margin: 10px 0;
+}

@@ -3,7 +3,6 @@ import classes from "./ProductItem.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { GoPlus } from "react-icons/go";
 import { HiOutlineHeart } from "react-icons/hi";
-import { HiViewfinderCircle } from "react-icons/hi2";
 import { FiBarChart2 } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
