@@ -1,7 +1,12 @@
 import React from "react";
+import ShopController from "../components/Shop/ShopController";
 
 function Shop() {
-  return <h1>Shop</h1>;
+  return (
+    <>
+      <ShopController />
+    </>
+  );
 }
 
 export default Shop;

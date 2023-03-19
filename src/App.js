@@ -30,13 +30,17 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("https://dummyjson.com/products");
       const data = await res.json();
       setProducts(data);
+
+      data.products.forEach((product) => {
+        console.log(product.rating);
+      });
       return data;
     };
 

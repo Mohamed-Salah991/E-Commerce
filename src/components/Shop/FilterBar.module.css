@@ -1,0 +1,32 @@
+.filter-bar {
+  padding: 20px 15px;
+  background-color: #ffffff;
+  box-shadow: rgba(3, 0, 71, 0.09) 0px 1px 3px;
+  width: 20%;
+  height: 80vh;
+
+  border-radius: 15px;
+}
+
+.filter-bar h3 {
+  font-weight: 500;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.filter-bar div .list {
+  margin-left: 5px;
+}
+
+.filter-bar div .list label,
+.filter-bar div .list input {
+  cursor: pointer;
+}
+
+.filter-bar div .list div {
+  padding: 2px 0;
+}
+
+.filter-bar div .list input {
+  margin-right: 5px;
+}

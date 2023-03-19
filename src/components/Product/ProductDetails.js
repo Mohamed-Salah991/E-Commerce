@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import classes from "./ProductDetails.module.css";
 import { AiFillStar } from "react-icons/ai";
 

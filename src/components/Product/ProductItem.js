@@ -7,7 +7,7 @@ import { FiBarChart2 } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 function ProductItem(props) {
-  const { image, title, price, rate } = props;
+  const { image, title, price } = props;
   const [wishList, setWishList] = useState("");
 
   function addToWishList() {
