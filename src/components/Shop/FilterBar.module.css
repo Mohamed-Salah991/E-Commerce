@@ -2,10 +2,11 @@
   padding: 20px 15px;
   background-color: #ffffff;
   box-shadow: rgba(3, 0, 71, 0.09) 0px 1px 3px;
-  width: 20%;
-  height: 80vh;
+  width: 230px;
+  height: 90vh;
 
   border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
 .filter-bar h3 {
@@ -29,4 +30,41 @@
 
 .filter-bar div .list input {
   margin-right: 5px;
+}
+
+.rating .list svg {
+  font-size: 17px;
+  color: #ffcd4e;
+}
+
+.close-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    position: absolute;
+    transform: translateX(-120%);
+  }
+
+  .close-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: rgb(15, 52, 96);
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+
+.filter-bar.active {
+  transform: translateX(-0);
+  z-index: 5;
 }

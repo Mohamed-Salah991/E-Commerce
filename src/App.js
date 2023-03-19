@@ -49,7 +49,7 @@ function App() {
 
   console.log(products);
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;

@@ -2,7 +2,11 @@ import React from "react";
 import classes from "./TopBar.module.css";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { BsList } from "react-icons/bs";
-function TopBar() {
+import { FiFilter } from "react-icons/fi";
+function TopBar(props) {
+  const changeFilterHandler = () => {
+    props.changeFilterState();
+  };
   return (
     <div className={classes["top-bar"]}>
       <div className={classes.content}>
@@ -24,6 +28,12 @@ function TopBar() {
           </button>
           <button>
             <BsList />
+          </button>
+          <button
+            onClick={changeFilterHandler}
+            className={classes["filter-icon"]}
+          >
+            <FiFilter />
           </button>
         </div>
       </div>

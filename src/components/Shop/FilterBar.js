@@ -1,9 +1,15 @@
 import React from "react";
 import classes from "./FilterBar.module.css";
 import { AiFillStar } from "react-icons/ai";
-function FilterBar() {
+import { AiOutlineClose } from "react-icons/ai";
+function FilterBar(props) {
+  const showFilter = props.showFilter;
+
   return (
-    <div className={classes["filter-bar"]}>
+    <div className={`${classes["filter-bar"]} ${showFilter && classes.active}`}>
+      <div onClick={props.changeFilterState} className={classes["close-icon"]}>
+        <AiOutlineClose />
+      </div>
       <div className={classes.categories}>
         <h3>Categories</h3>
         <div className={classes["list"]}>

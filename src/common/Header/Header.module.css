@@ -100,24 +100,21 @@
 .bottom-icons ul li:hover {
   position: relative;
   transform: translateY(-10px);
-  /* color: #e94560; */
   font-weight: bold;
 }
-.bottom-icons ul li:nth-child(2)::before {
-  /* content: ""; */
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #ebf1f9;
-  z-index: -1;
-  border: 5px solid red;
-}
-.bottom-icons ul li:nth-child(2) {
+.bottom-icons ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.bottom-icons ul li a.active li {
+  position: relative;
+  transform: translateY(-10px);
+  font-weight: bold;
+  font-weight: bold;
+}
 .bottom-icons ul li svg {
   display: block;
   font-size: 20px;
@@ -126,11 +123,6 @@
   font-size: 13px;
   font-weight: 500;
   padding: 4px 0;
-}
-
-.bottom-icons ul li:hover span,
-.bottom-icons ul li:hover svg {
-  /* color: tomato; */
 }
 
 /* Header Responsive Design  */

@@ -28,12 +28,7 @@ function ProductList() {
       image: process.env.PUBLIC_URL + `flash/flash-4.png`,
       price: 451,
     },
-    {
-      title: "Product5",
-      discount: 40,
-      image: process.env.PUBLIC_URL + `flash/flash-5.png`,
-      price: 451,
-    },
+
     {
       title: "Product6",
       discount: 30,

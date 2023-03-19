@@ -66,3 +66,12 @@
 .view button svg {
   font-size: 20px;
 }
+.view .filter-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .view .filter-icon {
+    display: flex;
+  }
+}

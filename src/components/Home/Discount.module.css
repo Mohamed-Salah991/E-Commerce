@@ -11,7 +11,6 @@
 }
 .wrapper {
   width: 90%;
-
   margin: 10px auto;
   position: relative;
 }
@@ -23,7 +22,6 @@
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 20px;
-  /* overflow: hidden; */
 }
 
 /* Slider  */
@@ -55,4 +53,30 @@
 
 .arrow {
   font-size: 30px;
+}
+
+/* Slider Styles  */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

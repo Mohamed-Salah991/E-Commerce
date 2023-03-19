@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classes from "./ProductItem.module.css";
+import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { GoPlus } from "react-icons/go";
 import { HiOutlineHeart } from "react-icons/hi";
@@ -29,10 +30,14 @@ function ProductItem(props) {
       )}
 
       <div className={classes.image}>
-        <img src={image} className={classes.img} alt={title} />
+        <Link to="/details">
+          <img src={image} className={classes.img} alt={title} />
+        </Link>
       </div>
       <div className={classes["info-text"]}>
-        <h3 className={classes.title}>{title}</h3>
+        <Link to="/details">
+          <h3 className={classes.title}>{title}</h3>
+        </Link>
         <div className={classes.rate}>
           <AiFillStar className={classes.star} />
           <AiFillStar className={classes.star} />

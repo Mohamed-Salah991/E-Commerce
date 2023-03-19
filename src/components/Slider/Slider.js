@@ -45,7 +45,10 @@ export default function Slider() {
             <div className="image">
               <img
                 alt="Slider"
-                src={process.env.PUBLIC_URL + `Slider/slide-${index + 1}.png`}
+                src={
+                  process.env.PUBLIC_URL +
+                  `images/SlideCard/slide-${index + 1}.png`
+                }
               />
             </div>
           </div>

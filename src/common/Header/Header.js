@@ -7,7 +7,8 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineHome } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { BiShoppingBag } from "react-icons/bi";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   const test = 9;
@@ -17,29 +18,48 @@ function Header() {
         <div className={classes["bottom-icons"]}>
           <ul>
             <li>
-              <AiOutlineHome />
-              <span>Home</span>
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                <AiOutlineHome />
+                <span>Home</span>
+              </NavLink>
             </li>
             <li>
-              <BsCart4 />
-              <span>Cart</span>
+              <NavLink
+                to="/shop"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                <BsCart4 />
+                <span>Shop</span>
+              </NavLink>
             </li>
             <li>
-              <AiOutlineHeart />
-              <span>Whish List</span>
+              <NavLink>
+                <BiShoppingBag />
+                <span>Cart</span>
+              </NavLink>
             </li>
             <li>
-              <AiOutlineUser />
-              <span>Account</span>
+              <NavLink>
+                <AiOutlineHeart />
+                <span>Whish List</span>
+              </NavLink>
             </li>
           </ul>
         </div>
       </section>
       <section className={classes.up}>
         <div className={classes.logo}>
-          <a href="/">
+          <Link to="/">
             <img src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className={classes.search}>
           <Search />

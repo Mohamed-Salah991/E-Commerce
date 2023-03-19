@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./NewArrivals.module.css";
+import { Link } from "react-router-dom";
 
 function NewArrivals() {
   const newArrivalsItems = [
@@ -38,9 +39,11 @@ function NewArrivals() {
           {newArrivalsItems.map((item, index) => {
             return (
               <div className={classes.item}>
-                <div className={classes.image}>
-                  <img src={item.img} alt="" />
-                </div>
+                <Link to="/shop">
+                  <div className={classes.image}>
+                    <img src={item.img} alt="" />
+                  </div>
+                </Link>
                 <div className={classes.price}>
                   <h4>{`${item.title} ${index + 1}`}</h4>
                   <h4>${item.price}</h4>
