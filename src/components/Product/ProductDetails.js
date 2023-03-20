@@ -25,9 +25,12 @@ function ProductDetails() {
               modules={[EffectCards]}
               className={sliderStyle.swiper}
             >
-              {imageList.map((img) => {
+              {imageList.map((img, index) => {
                 return (
-                  <SwiperSlide className={sliderStyle["swiper-slide"]}>
+                  <SwiperSlide
+                    key={index}
+                    className={sliderStyle["swiper-slide"]}
+                  >
                     <div className={classes.image}>
                       <img src={img} alt="" />
                     </div>

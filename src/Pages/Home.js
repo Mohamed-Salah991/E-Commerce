@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Discount from "../components/Home/Discount";
 import HeroSection from "../components/Home/HeroSection";
 import InfiniteSlider from "../components/Slider/Infinite Slider/Infinite Slider";
@@ -7,6 +7,9 @@ import Banner from "../components/Home/Banner";
 import Trust from "../components/Home/Trust";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeroSection />

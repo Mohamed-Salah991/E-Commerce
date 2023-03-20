@@ -10,14 +10,12 @@ function ShopController() {
     setShowFilterBar((prev) => !prev);
   };
 
-  const [products, setProducts] = useState({});
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("https://dummyjson.com/products");
       const data = await res.json();
-      setProducts(data);
 
       console.log("Get Data !");
 
