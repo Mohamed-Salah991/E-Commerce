@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Controller.module.css";
 import FilterBar from "./FilterBar";
 import ProductList from "./ProductList";
@@ -9,6 +9,28 @@ function ShopController() {
   const showFilterHandler = () => {
     setShowFilterBar((prev) => !prev);
   };
+
+  const [products, setProducts] = useState({});
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("https://dummyjson.com/products");
+      const data = await res.json();
+      setProducts(data);
+
+      console.log("Get Data !");
+
+      setProductList(data.products);
+
+      // data.products.forEach((product) => {
+      //   console.log(product);
+      // });
+      return data;
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className={classes["product-controller"]}>
@@ -21,7 +43,9 @@ function ShopController() {
             showFilter={showFilterBar}
             changeFilterState={showFilterHandler}
           />
-          <ProductList />
+          <div className={classes["products"]}>
+            <ProductList productList={productList} />
+          </div>
         </div>
       </div>
     </div>

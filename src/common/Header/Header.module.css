@@ -95,7 +95,7 @@
   align-items: center;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .bottom-icons ul li:hover {
   position: relative;

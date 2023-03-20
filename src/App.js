@@ -44,10 +44,8 @@ function App() {
       return data;
     };
 
-    fetchData();
+    // fetchData();
   }, []);
-
-  console.log(products);
 
   return <RouterProvider router={router}></RouterProvider>;
 }

@@ -14,17 +14,17 @@ function InfiniteSlider() {
     <div className={classes["infinity-slider"]}>
       <div className={classes["slider-container"]}>
         <div className={classes["inner-container"]}>
-          {images.map((i) => {
+          {images.map((i, index) => {
             return (
-              <div className={classes.content}>
-                <img alt="infinity Slider" src={i} />
+              <div className={classes.content} key={index}>
+                <img alt={`${"infinity Slider"} ${index}`} src={i} />
               </div>
             );
           })}
-          {images.map((i) => {
+          {images.map((i, index) => {
             return (
               <div className={classes.content}>
-                <img alt="infinity Slider" src={i} />
+                <img alt={`${"infinity Slider"} ${index}`} src={i} />
               </div>
             );
           })}

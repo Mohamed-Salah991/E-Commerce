@@ -44,7 +44,8 @@
 @media (max-width: 768px) {
   .filter-bar {
     position: absolute;
-    transform: translateX(-120%);
+
+    transform: translate(-120%, -90px);
   }
 
   .close-icon {
@@ -65,6 +66,6 @@
 }
 
 .filter-bar.active {
-  transform: translateX(-0);
+  transform: translate(0, -90px);
   z-index: 5;
 }

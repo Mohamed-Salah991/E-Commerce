@@ -38,7 +38,7 @@ function NewArrivals() {
         <div className={classes.items}>
           {newArrivalsItems.map((item, index) => {
             return (
-              <div className={classes.item}>
+              <div className={classes.item} key={index}>
                 <Link to="/shop">
                   <div className={classes.image}>
                     <img src={item.img} alt="" />

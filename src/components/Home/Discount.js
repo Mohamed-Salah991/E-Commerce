@@ -71,7 +71,7 @@ function Discount() {
       spaceBetween: 0,
     },
     // when window width is >= 640px
-    640: {
+    460: {
       slidesPerView: 2,
       spaceBetween: 10,
     },
@@ -99,9 +99,9 @@ function Discount() {
           navigation={true}
           modules={[Navigation]}
         >
-          {discountList.map((item) => {
+          {discountList.map((item, index) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <ProductItem
                   discount={item.discount}
                   image={item.image}

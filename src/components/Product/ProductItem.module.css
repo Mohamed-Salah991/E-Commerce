@@ -14,10 +14,13 @@
 .item .right-items {
   position: absolute;
   top: 10%;
-  right: -30px;
+  right: -50px;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+
+  padding: 5px 5px;
+  border-radius: 15px;
 }
 .item .right-items svg {
   display: inline-block;
@@ -37,13 +40,18 @@
   cursor: pointer;
 }
 .item:hover .right-items {
-  right: 13px;
+  right: 10px;
 }
 .image {
   height: 70%;
   width: 100%;
+  text-align: center;
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center; */
 }
 .img {
+  display: block;
   max-width: 100%;
   max-height: 100%;
   cursor: pointer;
@@ -118,7 +126,7 @@
     font-size: 15.5px;
   }
   .item .right-items {
-    right: 13px;
+    right: 10px;
   }
   .item .right-items svg {
     font-size: 25px;

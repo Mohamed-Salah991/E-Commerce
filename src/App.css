@@ -2,3 +2,10 @@
   width: 100px;
   height: 100px;
 }
+
+.swiper-button-next svg {
+  font-size: 5px !important;
+  width: 5px !important;
+  height: 5px !important;
+  color: red !important;
+}

@@ -1,61 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./ProductList.module.css";
 import ProductItem from "../Product/ProductItem";
+import Pagination from "./Pagination";
 
-function ProductList() {
-  const discountList = [
-    {
-      title: "Product1",
-      discount: 40,
-      image: process.env.PUBLIC_URL + `flash/flash-1.png`,
-      price: 451,
-    },
-    {
-      title: "Product2",
-      discount: 70,
-      image: process.env.PUBLIC_URL + `flash/flash-2.png`,
-      price: 451,
-    },
-    {
-      title: "Product3",
-      discount: 30,
-      image: process.env.PUBLIC_URL + `flash/flash-3.png`,
-      price: 451,
-    },
-    {
-      title: "Product4",
-      discount: 55,
-      image: process.env.PUBLIC_URL + `flash/flash-4.png`,
-      price: 451,
-    },
+function ProductList(props) {
+  console.log("Product List");
 
-    {
-      title: "Product6",
-      discount: 30,
-      image: process.env.PUBLIC_URL + `flash/flash-3.png`,
-      price: 451,
-    },
-    {
-      title: "Product7",
-      discount: 60,
-      image: process.env.PUBLIC_URL + `flash/flash-2.png`,
-      price: 451,
-    },
-  ];
+  useEffect(() => {
+    setProductList(props.productList);
+  }, [props.productList]);
+
+  const [productList, setProductList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const PRODUCT_PER_PAGE = 8;
+  const pages = Math.ceil(productList.length / PRODUCT_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * PRODUCT_PER_PAGE;
+  const finishIndex = currentPage * PRODUCT_PER_PAGE;
+  const orderedProducts = productList.slice(startIndex, finishIndex);
+
   return (
     <div className={classes["product-list"]}>
       <div className={classes.content}>
-        {discountList.map((item) => {
+        {orderedProducts?.map((item) => {
           return (
             <ProductItem
-              discount={item.discount}
-              image={item.image}
+              key={item.id}
+              image={item.images[0]}
               title={item.title}
               price={item.price}
             />
           );
         })}
       </div>
+      <Pagination
+        pages={pages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 }
