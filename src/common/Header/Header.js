@@ -55,6 +55,7 @@ function Header() {
           </ul>
         </div>
       </section>
+
       <section className={classes.up}>
         <div className={classes.logo}>
           <Link to="/">
@@ -76,8 +77,10 @@ function Header() {
             </li>
 
             <li>
-              <BsCart4 className={classes.icon} />
-              <span>{test}</span>
+              <Link to="/cart">
+                <BsCart4 className={classes.icon} />
+                <span>{test}</span>
+              </Link>
             </li>
             <li>
               <AiOutlineUser className={classes.icon} />

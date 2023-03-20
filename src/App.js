@@ -6,6 +6,7 @@ import Shop from "./Pages/Shop";
 import Root from "./Pages/Root";
 import Error from "./Pages/Error";
 import Details from "./Pages/Details";
+import Cart from "./Pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/details",
         element: <Details />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
