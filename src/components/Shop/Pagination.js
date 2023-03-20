@@ -13,7 +13,6 @@ const Pagination = ({ pages, currentPage, setCurrentPage }) => {
         disabled={currentPage === 1}
         onClick={() => {
           setCurrentPage((prev) => prev - 1);
-          window.scrollTo(0, 0);
         }}
       >
         Prev
@@ -22,7 +21,6 @@ const Pagination = ({ pages, currentPage, setCurrentPage }) => {
         <div
           onClick={() => {
             setCurrentPage(page);
-            window.scrollTo(0, 0);
           }}
           key={page}
           className={`${
@@ -38,7 +36,6 @@ const Pagination = ({ pages, currentPage, setCurrentPage }) => {
         disabled={currentPage === pages}
         onClick={() => {
           setCurrentPage((prev) => prev + 1);
-          window.scrollTo(0, 0);
         }}
       >
         Next

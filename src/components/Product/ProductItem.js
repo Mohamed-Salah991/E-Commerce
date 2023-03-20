@@ -31,7 +31,7 @@ function ProductItem(props) {
 
       <div className={classes.image}>
         <Link to="/details">
-          <img src={image} className={classes.img} alt={title} />
+          <img src={image} alt={title} />
         </Link>
       </div>
       <div className={classes["info-text"]}>

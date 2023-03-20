@@ -3,8 +3,9 @@ import ShopController from "../components/Shop/ShopController";
 
 function Shop() {
   console.log("Shop Page");
-  useEffect(() => {});
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <ShopController />
