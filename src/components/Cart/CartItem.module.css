@@ -61,6 +61,8 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(15, 52, 96);
+  border: none;
+  outline: none;
   width: 30px;
   height: 30px;
   color: white;
