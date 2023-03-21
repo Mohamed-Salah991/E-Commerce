@@ -1,3 +1,32 @@
-.CartController {
+.cart-controller {
   margin-top: 120px;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.content .cart-list {
+  flex: 1;
+  height: 90vh;
+  overflow: auto;
+  /* background-color: red; */
+}
+
+.content .cart-list::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+@media (max-width: 992px) {
+  .content {
+    /* flex-direction: column; */
+    display: block;
+  }
+  .content .cart-list {
+    height: 60vh !important;
+    overflow: auto;
+  }
 }

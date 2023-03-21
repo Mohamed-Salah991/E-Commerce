@@ -28,6 +28,7 @@ function ProductList(props) {
           return (
             <ProductItem
               key={item.id}
+              id={item.id}
               image={item.images[0]}
               title={item.title}
               price={item.price}

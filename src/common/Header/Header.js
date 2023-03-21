@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./Header.module.css";
 import Search from "./Search";
+import { useSelector } from "react-redux";
+
 import logo from "../../assets/Online-shop-logo.png";
 import { FiBarChart2 } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -11,7 +13,7 @@ import { BiShoppingBag } from "react-icons/bi";
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
-  const test = 9;
+  const cartItemsLength = useSelector((store) => store.cart.items.length);
   return (
     <nav className={classes.header}>
       <section className={classes["small-screen"]}>
@@ -41,8 +43,16 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink>
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
                 <BiShoppingBag />
+                {cartItemsLength === 0 ? undefined : (
+                  <span className={classes.number}>{cartItemsLength}</span>
+                )}
                 <span>Cart</span>
               </NavLink>
             </li>
@@ -79,7 +89,9 @@ function Header() {
             <li>
               <Link to="/cart">
                 <BsCart4 className={classes.icon} />
-                <span>{test}</span>
+                {cartItemsLength === 0 ? undefined : (
+                  <span>{cartItemsLength}</span>
+                )}
               </Link>
             </li>
             <li>

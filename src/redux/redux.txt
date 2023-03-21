@@ -1,5 +1,0 @@
-# redux 
-  - actions
-  - reducer
-  - selectors 
-  - store

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import classes from "./ProductItem.module.css";
+
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/Cart";
+
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { GoPlus } from "react-icons/go";
@@ -8,8 +12,10 @@ import { FiBarChart2 } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 function ProductItem(props) {
-  const { image, title, price } = props;
+  const { image, title, price, id } = props;
   const [wishList, setWishList] = useState("");
+
+  const dispatch = useDispatch();
 
   function addToWishList() {
     setWishList((prev) => !prev);
@@ -46,7 +52,19 @@ function ProductItem(props) {
         </div>
         <div className={classes.price}>
           <h4>{price} $</h4>
-          <button className={classes.button}>
+          <button
+            onClick={() => {
+              dispatch(
+                cartActions.add({
+                  id,
+                  title,
+                  price,
+                  image,
+                })
+              );
+            }}
+            className={classes.button}
+          >
             <GoPlus />
           </button>
         </div>

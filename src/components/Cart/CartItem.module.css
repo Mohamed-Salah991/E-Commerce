@@ -1,0 +1,155 @@
+.cart-item {
+  /* border: 2px solid #263041; */
+  margin: 10px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: rgb(3 0 71 / 9%) 5px 5px 5px;
+}
+
+.content {
+  display: flex;
+  height: 20vh;
+}
+
+.image {
+  padding: 20px 0 0 20px;
+  width: 200px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.image img {
+  max-width: 150px;
+  max-height: 100%;
+}
+
+.content .box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+}
+.text-info {
+  padding: 10px;
+  width: 40%;
+}
+
+.text-info h3 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.text-info span {
+  font-size: 15px;
+}
+
+.text-info h4 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 10px;
+  color: rgb(233, 69, 96);
+}
+
+.amount-controller {
+  display: flex;
+}
+
+.amount-controller button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 52, 96);
+  width: 30px;
+  height: 30px;
+  color: white;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.amount-controller span {
+  font-size: 18px;
+  margin: 0 15px;
+  width: 50px;
+
+  text-align: center;
+}
+.price {
+  margin-left: 20px;
+  width: 80px;
+}
+.price h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.delete {
+  margin: 0 20px;
+}
+
+.delete span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 69, 96);
+  width: 30px;
+  height: 30px;
+  color: white;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 780px) {
+  .content .box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* width: 100%; */
+
+    position: relative;
+  }
+  .text-info {
+    width: 90%;
+  }
+  .price {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+  }
+  .delete {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 580px) {
+  .image {
+    width: 150px;
+  }
+  .image img {
+    width: 100px;
+  }
+  .content {
+    height: 26vh;
+  }
+  .price {
+    left: 20px;
+    bottom: 8px;
+  }
+  .text-info h3 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 430px) {
+  .image {
+    width: 120px;
+  }
+  .image img {
+    width: 80px;
+  }
+}

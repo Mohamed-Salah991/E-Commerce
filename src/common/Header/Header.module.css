@@ -124,6 +124,20 @@
   font-weight: 500;
   padding: 4px 0;
 }
+.bottom-icons ul li span.number {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+  background-color: #e94560;
+  color: white;
+  top: 0;
+  right: -5px;
+}
 
 /* Header Responsive Design  */
 @media (max-width: 768px) {
