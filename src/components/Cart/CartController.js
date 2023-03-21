@@ -8,7 +8,7 @@ import PaymentInfo from "./PaymentInfo";
 function CartController() {
   const cartItems = useSelector((store) => store.cart.items);
   const cartItemLength = cartItems.length;
-  console.log("Cart Items", cartItems);
+  console.log("Cart Item", cartItems);
 
   useEffect(() => {
     window.scrollTo(0, 0);
