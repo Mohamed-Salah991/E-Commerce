@@ -1,5 +1,5 @@
 .controller {
-  margin-top: 120px;
+  margin-top: 100px;
 }
 
 .content {
@@ -7,6 +7,11 @@
   margin: 0 auto;
   min-height: 30vh;
   position: relative;
+  max-height: 60vh !important;
+  overflow: auto;
+}
+.content::-webkit-scrollbar {
+  width: 0.2em;
 }
 .content > h3 {
   position: absolute;

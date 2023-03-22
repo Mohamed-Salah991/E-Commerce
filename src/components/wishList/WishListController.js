@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./WishListController.module.css";
 import WishListItem from "./WishListItem";
 import { useSelector } from "react-redux";
@@ -8,6 +8,10 @@ import { BsArrowLeft } from "react-icons/bs";
 function WishListController() {
   const wishListItems = useSelector((store) => store.wishList.items);
   const wishListLength = wishListItems.length;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={classes.controller}>
