@@ -10,7 +10,7 @@ function CartItem({ image, title, brand, price, id, quantity }) {
     <div className={classes["cart-item"]}>
       <div className={classes.content}>
         <div className={classes.image}>
-          <img src={image} alt="" />
+          <img src={image} alt="product" />
         </div>
         <div className={classes.box}>
           <div className={classes["text-info"]}>
