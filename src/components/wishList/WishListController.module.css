@@ -7,7 +7,7 @@
   margin: 0 auto;
   min-height: 30vh;
   position: relative;
-  max-height: 60vh !important;
+  max-height: 70vh !important;
   overflow: auto;
 }
 .content::-webkit-scrollbar {
@@ -18,13 +18,14 @@
   top: 100px;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 
   font-weight: 600;
 }
 .head {
   width: 90%;
   margin: 20px auto;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 
 .head h3 {
@@ -54,4 +55,13 @@
 }
 .item-length {
   margin-left: 40%;
+}
+
+@media (max-width: 580px) {
+  .head > div {
+    justify-content: space-between;
+  }
+  .item-length {
+    margin: 0 20px 0 0;
+  }
 }

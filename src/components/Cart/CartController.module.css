@@ -48,7 +48,7 @@
   top: 150px;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  width: 100%;
   font-weight: 600;
 }
 .content .cart-list {
@@ -77,5 +77,14 @@
   .content .cart-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .head > div {
+    justify-content: space-between;
+  }
+  .item-length {
+    margin: 0 20px 0 0;
   }
 }
