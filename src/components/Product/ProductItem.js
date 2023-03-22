@@ -3,6 +3,7 @@ import classes from "./ProductItem.module.css";
 
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/Cart";
+import { wishListActions } from "../../store/Whish-List";
 
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
@@ -19,6 +20,14 @@ function ProductItem(props) {
 
   function addToWishList() {
     setWishList((prev) => !prev);
+    dispatch(
+      wishListActions.add({
+        id,
+        title,
+        price,
+        image,
+      })
+    );
   }
 
   return (

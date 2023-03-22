@@ -57,7 +57,7 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink>
+              <NavLink to="/wish-list">
                 <AiOutlineHeart />
                 <span>Whish List</span>
               </NavLink>

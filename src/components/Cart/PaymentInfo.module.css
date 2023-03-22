@@ -77,10 +77,22 @@
 }
 
 @media (max-width: 992px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
   .payment-info {
     margin: 30px 0;
   }
   .check-out {
-    padding: 70px 0;
+    position: relative;
+    height: 100%;
+  }
+  .check-out button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

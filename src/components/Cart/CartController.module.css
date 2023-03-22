@@ -30,3 +30,10 @@
     overflow: auto;
   }
 }
+
+@media (max-width: 500px) {
+  .content .cart-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
