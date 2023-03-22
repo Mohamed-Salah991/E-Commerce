@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./WishListItem.module.css";
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../store/Cart";
 import { AiOutlineClose } from "react-icons/ai";
+import { wishListActions } from "../../store/Whish-List";
 
 function WishListItem({ image, title, brand, price, id, quantity }) {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function WishListItem({ image, title, brand, price, id, quantity }) {
           <div className={classes.delete}>
             <span
               onClick={() => {
-                dispatch(cartActions.delete({ id }));
+                dispatch(wishListActions.delete({ id }));
               }}
             >
               <AiOutlineClose />

@@ -1,5 +1,4 @@
 .wish-list-item {
-  /* border: 2px solid #263041; */
   margin: 10px;
   border-radius: 15px;
   background-color: white;
@@ -22,6 +21,8 @@
 .image img {
   max-width: 150px;
   max-height: 100%;
+
+  border-radius: 15px;
 }
 
 .content .box {
@@ -123,8 +124,8 @@
   }
   .delete {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     margin: 0;
   }
 }
@@ -132,6 +133,7 @@
 @media (max-width: 580px) {
   .image {
     width: 150px;
+    padding: 10px;
   }
   .image img {
     width: 100px;
@@ -186,7 +188,7 @@
     display: flex;
     justify-content: center;
     align-items: unset;
-    padding: 10px;
+    padding: 20px;
   }
   .image img {
     width: auto;

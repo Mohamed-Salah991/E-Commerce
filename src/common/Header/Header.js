@@ -14,6 +14,8 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   const cartItemsLength = useSelector((store) => store.cart.items.length);
+  const WishListLength = useSelector((store) => store.wishList.items.length);
+
   return (
     <nav className={classes.header}>
       <section className={classes["small-screen"]}>
@@ -59,6 +61,13 @@ function Header() {
             <li>
               <NavLink to="/wish-list">
                 <AiOutlineHeart />
+                {WishListLength === 0 ? undefined : (
+                  <span
+                    className={`${classes.number} ${classes["whish-list"]}`}
+                  >
+                    {WishListLength}
+                  </span>
+                )}
                 <span>Whish List</span>
               </NavLink>
             </li>
@@ -82,8 +91,12 @@ function Header() {
               <span>5</span>
             </li>
             <li>
-              <AiOutlineHeart className={classes.icon} />
-              <span>5</span>
+              <Link to="/wish-list">
+                <AiOutlineHeart className={classes.icon} />
+                {WishListLength === 0 ? undefined : (
+                  <span>{WishListLength}</span>
+                )}
+              </Link>
             </li>
 
             <li>

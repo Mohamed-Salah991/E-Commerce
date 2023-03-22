@@ -1,0 +1,43 @@
+.controller {
+  margin-top: 120px;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.head {
+  width: 90%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.head h3 {
+  font-size: 25px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  padding-left: 20px;
+}
+.head > div {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.back {
+  padding-left: 20px;
+  font-size: 17px;
+  cursor: pointer;
+}
+.back:hover {
+  text-decoration: underline;
+}
+.back a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-length {
+  margin-left: 40%;
+}
