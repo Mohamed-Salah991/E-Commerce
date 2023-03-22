@@ -87,8 +87,14 @@ function Header() {
         <div className={classes.icons}>
           <ul>
             <li>
-              <FiBarChart2 className={classes.icon} />
-              <span>5</span>
+              <Link to="/">
+                <AiOutlineHome className={classes.icon} />
+              </Link>
+            </li>
+            <li>
+              <Link to="/shop">
+                <BsCart4 className={classes.icon} />
+              </Link>
             </li>
             <li>
               <Link to="/wish-list">
@@ -101,7 +107,7 @@ function Header() {
 
             <li>
               <Link to="/cart">
-                <BsCart4 className={classes.icon} />
+                <BiShoppingBag className={classes.icon} />
                 {cartItemsLength === 0 ? undefined : (
                   <span>{cartItemsLength}</span>
                 )}

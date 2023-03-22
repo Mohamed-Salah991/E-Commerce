@@ -26,6 +26,7 @@ function WishListController() {
         </div>
       </div>
       <div className={classes.content}>
+        {wishListLength === 0 ? <h3>Your Cart Is Empty</h3> : undefined}
         {wishListItems.map((item) => {
           return (
             <WishListItem

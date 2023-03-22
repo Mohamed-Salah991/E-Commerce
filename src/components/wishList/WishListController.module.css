@@ -5,8 +5,17 @@
 .content {
   width: 90%;
   margin: 0 auto;
+  min-height: 30vh;
+  position: relative;
 }
+.content > h3 {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+  font-weight: 600;
+}
 .head {
   width: 90%;
   margin: 20px auto;
