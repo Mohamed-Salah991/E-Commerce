@@ -4,6 +4,10 @@ import { AiFillStar } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 function FilterBar(props) {
   const showFilter = props.showFilter;
+  const filterHandler = (item) => {
+    console.log("Item ", item);
+    props.setFilterItem(item);
+  };
 
   return (
     <div className={`${classes["filter-bar"]} ${showFilter && classes.active}`}>
@@ -14,16 +18,43 @@ function FilterBar(props) {
         <h3>Categories</h3>
         <div className={classes["list"]}>
           <div>
-            <input type="radio" id="phones" name="category" value="phones" />
-            <label htmlFor="phones">Phones</label>
+            <input
+              type="radio"
+              id="all"
+              name="category"
+              value="all"
+              defaultChecked
+            />
+            <label
+              onClick={() => {
+                filterHandler("all");
+              }}
+              htmlFor="all"
+            >
+              All
+            </label>
           </div>
           <div>
             <input type="radio" id="mobiles" name="category" value="mobiles" />
-            <label htmlFor="mobiles">Mobiles</label>
+            <label
+              onClick={() => {
+                filterHandler("smartphones");
+              }}
+              htmlFor="mobiles"
+            >
+              Mobiles
+            </label>
           </div>
           <div>
             <input type="radio" id="laptops" name="category" value="laptops" />
-            <label htmlFor="laptops">Laptops</label>
+            <label
+              onClick={() => {
+                filterHandler("laptops");
+              }}
+              htmlFor="laptops"
+            >
+              Laptops
+            </label>
           </div>
         </div>
       </div>

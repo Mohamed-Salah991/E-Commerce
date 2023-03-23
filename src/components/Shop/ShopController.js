@@ -12,9 +12,7 @@ function ShopController() {
 
   const [productList, setProductList] = useState([]);
   console.log("Product List", productList);
-  const [filterItem, setFilterItem] = useState("laptops");
-
-  const filterItemHandler = () => {};
+  const [filterItem, setFilterItem] = useState("all");
 
   const filteredProduct = productList.filter((product) => {
     if (filterItem === "all") return product;
@@ -51,6 +49,7 @@ function ShopController() {
         </div>
         <div className={classes["down"]}>
           <FilterBar
+            setFilterItem={setFilterItem}
             showFilter={showFilterBar}
             changeFilterState={showFilterHandler}
           />
