@@ -40,6 +40,7 @@ function CartController() {
           {cartItems.map((item) => {
             return (
               <CartItem
+                key={item.id}
                 image={item.image}
                 title={item.title}
                 price={item.totalPrice}

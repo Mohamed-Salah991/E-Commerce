@@ -23,7 +23,7 @@ function InfiniteSlider() {
           })}
           {images.map((i, index) => {
             return (
-              <div className={classes.content}>
+              <div className={classes.content} key={index}>
                 <img alt={`${"infinity Slider"} ${index}`} src={i} />
               </div>
             );

@@ -11,6 +11,19 @@ function ShopController() {
   };
 
   const [productList, setProductList] = useState([]);
+  console.log("Product List", productList);
+  const [filterItem, setFilterItem] = useState("laptops");
+
+  const filterItemHandler = () => {};
+
+  const filteredProduct = productList.filter((product) => {
+    if (filterItem === "all") return product;
+    else if (filterItem === "smartphones") {
+      return product.category === "smartphones";
+    } else if (filterItem === "laptops") {
+      return product.category === "laptops";
+    }
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,7 +55,7 @@ function ShopController() {
             changeFilterState={showFilterHandler}
           />
           <div className={classes["products"]}>
-            <ProductList productList={productList} />
+            <ProductList productList={filteredProduct} />
           </div>
         </div>
       </div>
