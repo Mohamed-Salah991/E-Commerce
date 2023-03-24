@@ -4,9 +4,15 @@ import { AiFillStar } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 function FilterBar(props) {
   const showFilter = props.showFilter;
-  const filterHandler = (item) => {
+  const filterHandler = (event) => {
+    const item = event.target.value;
     console.log("Item ", item);
     props.setFilterItem(item);
+
+    console.log("Screen Width : ", window.screen.width);
+    if (window.screen.width <= 768) {
+      props.changeFilterState();
+    }
   };
 
   return (
@@ -24,37 +30,29 @@ function FilterBar(props) {
               name="category"
               value="all"
               defaultChecked
+              onClick={filterHandler}
             />
-            <label
-              onClick={() => {
-                filterHandler("all");
-              }}
-              htmlFor="all"
-            >
-              All
-            </label>
+            <label htmlFor="all">All</label>
           </div>
           <div>
-            <input type="radio" id="mobiles" name="category" value="mobiles" />
-            <label
-              onClick={() => {
-                filterHandler("smartphones");
-              }}
-              htmlFor="mobiles"
-            >
-              Mobiles
-            </label>
+            <input
+              onClick={filterHandler}
+              type="radio"
+              id="mobiles"
+              name="category"
+              value="smartphones"
+            />
+            <label htmlFor="mobiles">Mobiles</label>
           </div>
           <div>
-            <input type="radio" id="laptops" name="category" value="laptops" />
-            <label
-              onClick={() => {
-                filterHandler("laptops");
-              }}
-              htmlFor="laptops"
-            >
-              Laptops
-            </label>
+            <input
+              onClick={filterHandler}
+              type="radio"
+              id="laptops"
+              name="category"
+              value="laptops"
+            />
+            <label htmlFor="laptops">Laptops</label>
           </div>
         </div>
       </div>

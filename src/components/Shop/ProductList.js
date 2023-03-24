@@ -9,6 +9,7 @@ function ProductList(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
     setProductList(props.productList);
+    setCurrentPage(1);
   }, [props.productList]);
 
   const [productList, setProductList] = useState([]);

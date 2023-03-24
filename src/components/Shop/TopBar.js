@@ -7,6 +7,10 @@ function TopBar(props) {
   const changeFilterHandler = () => {
     props.changeFilterState();
   };
+  const changeSortingHandler = (event) => {
+    console.log("Event", event.target.value);
+    props.setSortItem(event.target.value);
+  };
   return (
     <div className={classes["top-bar"]}>
       <div className={classes.content}>
@@ -16,10 +20,16 @@ function TopBar(props) {
         </div>
         <div className={classes.sort}>
           <span>Sort by: </span>
-          <select name="" id="">
-            <option value="">Phones</option>
-            <option value="">Mobiles</option>
-            <option value="">Laptops</option>
+          <select onChange={changeSortingHandler} name="sort" id="sort-price">
+            <option name="sort" value="none">
+              None
+            </option>
+            <option name="sort" value="low">
+              Low Price
+            </option>
+            <option name="sort" value="high">
+              High Price
+            </option>
           </select>
         </div>
         <div className={classes.view}>

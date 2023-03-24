@@ -6,22 +6,9 @@ import TopBar from "./TopBar";
 
 function ShopController() {
   const [showFilterBar, setShowFilterBar] = useState(false);
-  const showFilterHandler = () => {
-    setShowFilterBar((prev) => !prev);
-  };
-
   const [productList, setProductList] = useState([]);
-  console.log("Product List", productList);
   const [filterItem, setFilterItem] = useState("all");
-
-  const filteredProduct = productList.filter((product) => {
-    if (filterItem === "all") return product;
-    else if (filterItem === "smartphones") {
-      return product.category === "smartphones";
-    } else if (filterItem === "laptops") {
-      return product.category === "laptops";
-    }
-  });
+  const [sortItem, setSortItem] = useState("none");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,11 +28,40 @@ function ShopController() {
     fetchData();
   }, []);
 
+  const showFilterHandler = () => {
+    setShowFilterBar((prev) => !prev);
+  };
+
+  console.log("Product List", productList);
+
+  // Filter
+  const filteredProduct = productList.filter((product) => {
+    if (filterItem === "smartphones") {
+      return product.category === "smartphones";
+    } else if (filterItem === "laptops") {
+      return product.category === "laptops";
+    }
+    // return all products
+    return product;
+  });
+
+  // sorting
+
+  const sortedProduct =
+    sortItem === "low"
+      ? filteredProduct.sort((a, b) => a.price - b.price)
+      : sortItem === "high"
+      ? filteredProduct.sort((a, b) => b.price - a.price)
+      : filteredProduct;
+
   return (
     <div className={classes["product-controller"]}>
       <div className={classes.content}>
         <div className={classes["top"]}>
-          <TopBar changeFilterState={showFilterHandler} />
+          <TopBar
+            changeFilterState={showFilterHandler}
+            setSortItem={setSortItem}
+          />
         </div>
         <div className={classes["down"]}>
           <FilterBar
@@ -54,7 +70,7 @@ function ShopController() {
             changeFilterState={showFilterHandler}
           />
           <div className={classes["products"]}>
-            <ProductList productList={filteredProduct} />
+            <ProductList productList={sortedProduct} />
           </div>
         </div>
       </div>
