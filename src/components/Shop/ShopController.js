@@ -440,7 +440,9 @@ function ShopController() {
     setShowFilterBar((prev) => !prev);
   };
 
-  console.log("Product List", productList);
+  productList.forEach((item) => {
+    console.log("Product List", item.brand);
+  });
 
   // Filter
   const filteredProduct = productList.filter((product) => {
@@ -448,6 +450,11 @@ function ShopController() {
       return product.category === "smartphones";
     } else if (filterItem === "laptops") {
       return product.category === "laptops";
+    } else if (filterItem === "watches") {
+      return (
+        product.category === "mens-watches" ||
+        product.category === "womens-watches"
+      );
     }
     // return all products
     return product;

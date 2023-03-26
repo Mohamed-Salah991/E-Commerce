@@ -13,6 +13,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.query {
+  min-width: 30vw;
+}
 
 .query h4 {
   font-weight: 550;
@@ -73,5 +76,8 @@
 @media (max-width: 768px) {
   .view .filter-icon {
     display: flex;
+  }
+  .query {
+    width: 100%;
   }
 }
