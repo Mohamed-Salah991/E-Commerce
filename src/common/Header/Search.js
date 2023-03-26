@@ -32,7 +32,10 @@ function Search() {
               {filteredData.map((item) => {
                 return (
                   <li>
-                    <a href="/">{item.title}</a>
+                    <div>
+                      <img src={item.images[0]} alt="" />
+                      <a href="/">{item.title}</a>
+                    </div>
                   </li>
                 );
               })}

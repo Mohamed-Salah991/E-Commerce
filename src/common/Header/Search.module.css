@@ -29,10 +29,26 @@
 .search-result::-webkit-scrollbar {
   width: 0.2em;
 }
+.search-result li {
+  padding: 5px 10px;
+}
+.search-result div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: red; */
+
+  height: 60px;
+}
 .search-result a {
   padding: 5px 0;
   font-size: 15px;
   transition: all 0.3s ease;
+  margin-left: 20px;
+}
+.search-result img {
+  width: 50px;
+  max-height: 100%;
 }
 .search-result a:hover {
   text-decoration: underline;
