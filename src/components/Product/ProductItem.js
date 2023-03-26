@@ -61,6 +61,7 @@ function ProductItem(props) {
         </div>
         <div className={classes.price}>
           <h4>{price} $</h4>
+          <h5>{id}</h5>
           <button
             onClick={() => {
               dispatch(

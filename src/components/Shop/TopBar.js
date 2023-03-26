@@ -4,6 +4,9 @@ import { HiOutlineViewGrid } from "react-icons/hi";
 import { BsList } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
 function TopBar(props) {
+  const filterItem = props.filterItem;
+  const productsLength = props.productsLength;
+
   const changeFilterHandler = () => {
     props.changeFilterState();
   };
@@ -11,12 +14,17 @@ function TopBar(props) {
     console.log("Event", event.target.value);
     props.setSortItem(event.target.value);
   };
+
   return (
     <div className={classes["top-bar"]}>
       <div className={classes.content}>
         <div className={classes.query}>
-          <h4>Searching for “ mobile phone ”</h4>
-          <span>48 results found</span>
+          {filterItem !== "all" ? (
+            <h4>Search For {`"${filterItem.toUpperCase()}"`}</h4>
+          ) : (
+            <h4>All Products </h4>
+          )}
+          <span>{productsLength} results found</span>
         </div>
         <div className={classes.sort}>
           <span>Sort by: </span>

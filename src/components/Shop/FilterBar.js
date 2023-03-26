@@ -54,6 +54,16 @@ function FilterBar(props) {
             />
             <label htmlFor="laptops">Laptops</label>
           </div>
+          <div>
+            <input
+              onClick={filterHandler}
+              type="radio"
+              id="watches"
+              name="category"
+              value="watches"
+            />
+            <label htmlFor="watches">Watches</label>
+          </div>
         </div>
       </div>
       <div className={classes["price-range"]}>

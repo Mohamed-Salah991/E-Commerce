@@ -1,17 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Search.module.css";
 
+import { AllProducts } from "../../components/Shop/ShopController";
+
 function Search() {
+  const [filteredData, setFilteredData] = useState([]);
+
+  const handleChangeFilter = (event) => {
+    const value = event.target.value;
+    const newFilter = AllProducts.filter((item) => {
+      return item.title.toLowerCase().includes(value.toLowerCase());
+    });
+
+    if (value === "") setFilteredData([]);
+    else setFilteredData(newFilter);
+  };
+
   return (
-    <>
-      <input
-        className={classes.input}
-        type="search"
-        placeholder="Search For Product..."
-        id="header-search"
-      />
-      <button className={classes.button}>Search</button>
-    </>
+    <div className={classes.search}>
+      <div className={classes["search-input"]}>
+        <input
+          onChange={handleChangeFilter}
+          className={classes.input}
+          type="search"
+          placeholder="Search For Product..."
+          id="header-search"
+        />
+        {filteredData.length !== 0 && (
+          <div className={classes["search-result"]}>
+            <ul>
+              {filteredData.map((item) => {
+                return (
+                  <li>
+                    <a href="/">{item.title}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+      </div>
+      <div>
+        <button className={classes.button}>Search</button>
+      </div>
+    </div>
   );
 }
 

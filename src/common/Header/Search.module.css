@@ -2,9 +2,46 @@
   --border-radius: 5px;
   --search-input-height: 35px;
 }
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+.search-input {
+  width: 70%;
+  position: relative;
+}
+.search-result {
+  position: absolute;
+  width: 100%;
+  top: 35px;
+  left: 0px;
+  padding: 10px 5px 20px 10px;
+  border-radius: 0 0 15px 15px;
+  background-color: #f6f9fc;
+  text-align: start;
+
+  max-height: 40vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.search-result::-webkit-scrollbar {
+  width: 0.2em;
+}
+.search-result a {
+  font-weight: 500;
+  padding: 5px 0;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.search-result a:hover {
+  text-decoration: underline;
+}
+
 .input {
   border: none;
-  width: 70%;
+  width: 100%;
   height: var(--search-input-height);
   font-size: 17px;
   padding: 7px 10px;
@@ -14,6 +51,12 @@
 .input::placeholder {
   opacity: 0.8;
   font-size: 13px;
+}
+
+.input::-webkit-search-cancel-button {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
 }
 
 .button {
@@ -40,8 +83,11 @@
 }
 
 @media (max-width: 400px) {
-  .input {
-    width: calc(100% - 75px);
+  .search-result {
+    width: 70vw;
+  }
+  .search-result a {
+    font-size: 13px;
   }
   .button {
     padding: 7px 10px;
