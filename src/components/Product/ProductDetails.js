@@ -39,7 +39,7 @@ function ProductDetails() {
         id: productItem.id,
         title: productItem.title,
         price: productItem.price,
-        image: productItem.image,
+        image: productItem.images[0],
       })
     );
   }
@@ -50,7 +50,7 @@ function ProductDetails() {
         id: productItem.id,
         title: productItem.title,
         price: productItem.price,
-        image: productItem.image,
+        image: productItem.images[0],
       })
     );
   }
@@ -116,7 +116,7 @@ function ProductDetails() {
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
               nisi reprehenderit cum reiciendis repellendus, aspernatur odit
               officiis maiores saepe blanditiis sint ipsam, nesciunt impedit
-              dolores. Aliquam explicabo a obcaecati. Perferendis?{" "}
+              dolores. Aliquam explicabo a obcaecati. Perferendis?
             </p>
           </div>
         </div>
