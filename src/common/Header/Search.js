@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import classes from "./Search.module.css";
+import { Link } from "react-router-dom";
 
 import { AllProducts } from "../../components/Shop/ShopController";
 
 function Search() {
   const [filteredData, setFilteredData] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+
+  const showProductDetailsHandler = () => {
+    setFilteredData([]);
+    setSearchValue("");
+  };
 
   const handleChangeFilter = (event) => {
     const value = event.target.value;
+    setSearchValue(event.target.value);
     const newFilter = AllProducts.filter((item) => {
       return item.title.toLowerCase().includes(value.toLowerCase());
     });
@@ -20,6 +28,7 @@ function Search() {
     <div className={classes.search}>
       <div className={classes["search-input"]}>
         <input
+          value={searchValue}
           onChange={handleChangeFilter}
           className={classes.input}
           type="search"
@@ -33,8 +42,19 @@ function Search() {
                 return (
                   <li>
                     <div>
-                      <img src={item.images[0]} alt="" />
-                      <a href="/">{item.title}</a>
+                      <Link
+                        onClick={showProductDetailsHandler}
+                        to={`/${item.id}`}
+                      >
+                        <img src={item.images[0]} alt="" />
+                      </Link>
+                      <Link
+                        className={classes.title}
+                        onClick={showProductDetailsHandler}
+                        to={`/${item.id}`}
+                      >
+                        {item.title}
+                      </Link>
                     </div>
                   </li>
                 );

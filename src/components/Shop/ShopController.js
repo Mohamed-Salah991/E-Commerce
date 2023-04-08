@@ -6,25 +6,6 @@ import TopBar from "./TopBar";
 
 export const AllProducts = [
   {
-    id: 1,
-    title: "iPhone 9",
-    description: "An apple mobile which is nothing like apple",
-    price: 549,
-    discountPercentage: 12.96,
-    rating: 4.69,
-    stock: 94,
-    brand: "Apple",
-    category: "smartphones",
-    thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-    images: [
-      "https://i.dummyjson.com/data/products/1/1.jpg",
-      "https://i.dummyjson.com/data/products/1/2.jpg",
-      "https://i.dummyjson.com/data/products/1/3.jpg",
-      "https://i.dummyjson.com/data/products/1/4.jpg",
-      "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-    ],
-  },
-  {
     id: 2,
     title: "iPhone X",
     description:
@@ -186,7 +167,6 @@ export const AllProducts = [
     thumbnail: "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
     images: [
       "https://i.dummyjson.com/data/products/10/1.jpg",
-      "https://i.dummyjson.com/data/products/10/2.jpg",
       "https://i.dummyjson.com/data/products/10/3.jpg",
       "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
     ],
@@ -381,6 +361,7 @@ export const AllProducts = [
 
 function ShopController() {
   const [showFilterBar, setShowFilterBar] = useState(false);
+  const [gridView, setGridView] = useState(true);
   const [productList, setProductList] = useState([]);
   const [filterItem, setFilterItem] = useState("all");
   const [sortItem, setSortItem] = useState("none");
@@ -474,6 +455,8 @@ function ShopController() {
       <div className={classes.content}>
         <div className={classes["top"]}>
           <TopBar
+            setGridView={setGridView}
+            gridView={gridView}
             productsLength={sortedProduct.length}
             filterItem={filterItem}
             changeFilterState={showFilterHandler}
@@ -487,7 +470,7 @@ function ShopController() {
             changeFilterState={showFilterHandler}
           />
           <div className={classes["products"]}>
-            <ProductList productList={sortedProduct} />
+            <ProductList gridView={gridView} productList={sortedProduct} />
           </div>
         </div>
       </div>

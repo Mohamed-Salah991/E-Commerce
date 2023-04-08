@@ -16,52 +16,116 @@ SwiperCore.use([Navigation]);
 function Discount() {
   const discountList = [
     {
-      title: "Product1",
+      id: 2,
+      title: "iPhone X",
+      description:
+        "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      price: 899,
+      discountPercentage: 17.94,
+      rating: 4.44,
+      stock: 34,
+      brand: "Apple",
       discount: 40,
-      image: process.env.PUBLIC_URL + `flash/flash-1.png`,
-      price: 451,
+      category: "smartphones",
+      thumbnail: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      images: [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      ],
     },
     {
-      title: "Product2",
+      id: 61,
+      title: "Leather Straps Wristwatch",
+      description: "Style:Sport ,Clasp:Buckles ,Water Resistance Depth:3Bar",
+      price: 120,
+      discountPercentage: 7.14,
+      rating: 4.63,
+      stock: 91,
+      discount: 30,
+      brand: "Naviforce",
+      category: "mens-watches",
+      thumbnail: "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
+      images: [
+        "https://i.dummyjson.com/data/products/61/1.jpg",
+        "https://i.dummyjson.com/data/products/61/2.png",
+        "https://i.dummyjson.com/data/products/61/3.jpg",
+      ],
+    },
+    {
+      id: 3,
+      title: "Samsung Universe 9",
+      description:
+        "Samsung's new variant which goes beyond Galaxy to the Universe",
+      price: 1249,
+      discountPercentage: 15.46,
+      rating: 4.09,
+      stock: 36,
       discount: 70,
-      image: process.env.PUBLIC_URL + `flash/flash-2.png`,
-      price: 451,
+      brand: "Samsung",
+      category: "smartphones",
+      thumbnail: "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      images: ["https://i.dummyjson.com/data/products/3/1.jpg"],
     },
     {
-      title: "Product3",
-      discount: 30,
-      image: process.env.PUBLIC_URL + `flash/flash-3.png`,
-      price: 451,
+      id: 6,
+      title: "MacBook Pro",
+      description:
+        "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      price: 1749,
+      discountPercentage: 11.02,
+      rating: 4.57,
+      stock: 83,
+      discount: 65,
+      brand: "Apple",
+      category: "laptops",
+      thumbnail: "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      images: [
+        "https://i.dummyjson.com/data/products/6/1.png",
+        "https://i.dummyjson.com/data/products/6/2.jpg",
+        "https://i.dummyjson.com/data/products/6/3.png",
+        "https://i.dummyjson.com/data/products/6/4.jpg",
+      ],
     },
     {
-      title: "Product4",
+      id: 5,
+      title: "Huawei P30",
+      description:
+        "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      price: 499,
+      discountPercentage: 10.58,
+      rating: 4.09,
+      stock: 32,
       discount: 55,
-      image: process.env.PUBLIC_URL + `flash/flash-4.png`,
-      price: 451,
+      brand: "Huawei",
+      category: "smartphones",
+      thumbnail: "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+      images: [
+        "https://i.dummyjson.com/data/products/5/1.jpg",
+        "https://i.dummyjson.com/data/products/5/2.jpg",
+        "https://i.dummyjson.com/data/products/5/3.jpg",
+      ],
     },
     {
-      title: "Product1",
-      discount: 30,
-      image: process.env.PUBLIC_URL + `flash/flash-3.png`,
-      price: 451,
-    },
-    {
-      title: "Product2",
-      discount: 60,
-      image: process.env.PUBLIC_URL + `flash/flash-2.png`,
-      price: 451,
-    },
-    {
-      title: "Product1",
-      discount: 30,
-      image: process.env.PUBLIC_URL + `flash/flash-3.png`,
-      price: 451,
-    },
-    {
-      title: "Product2",
-      discount: 60,
-      image: process.env.PUBLIC_URL + `flash/flash-2.png`,
-      price: 451,
+      id: 63,
+      title: "Royal Blue Premium Watch",
+      description:
+        "Men Silver Chain Royal Blue Premium Watch Latest Analog Watch",
+      price: 50,
+      discount: 40,
+      discountPercentage: 2.56,
+      rating: 4.89,
+      stock: 142,
+      brand: "SKMEI 9117",
+      category: "mens-watches",
+      thumbnail: "https://i.dummyjson.com/data/products/63/thumbnail.webp",
+      images: [
+        "https://i.dummyjson.com/data/products/63/1.jpg",
+        "https://i.dummyjson.com/data/products/63/2.jpg",
+        "https://i.dummyjson.com/data/products/63/3.png",
+        "https://i.dummyjson.com/data/products/63/4.jpeg",
+      ],
     },
   ];
 
@@ -95,19 +159,23 @@ function Discount() {
           breakpoints={breakpoints}
           slidesPerView={1}
           spaceBetween={30}
-          loop={true}
+          loop={false}
           navigation={true}
           modules={[Navigation]}
         >
           {discountList.map((item, index) => {
             return (
               <SwiperSlide key={index}>
-                <ProductItem
-                  discount={item.discount}
-                  image={item.image}
-                  title={item.title}
-                  price={item.price}
-                />
+                <div className={classes.item}>
+                  <ProductItem
+                    height="100%"
+                    discount={item.discount}
+                    image={item.images[0]}
+                    title={item.title}
+                    price={item.price}
+                    id={item.id}
+                  />
+                </div>
               </SwiperSlide>
             );
           })}

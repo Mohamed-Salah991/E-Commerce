@@ -1,19 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./ProductDetails.module.css";
-import { AiFillStar } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/Cart";
+import { wishListActions } from "../../store/Whish-List";
 
+import { useParams } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
+import { HiOutlineHeart } from "react-icons/hi";
+import { AllProducts } from "../Shop/ShopController";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import sliderStyle from "./imageSlider.module.css";
 
-const imageList = [
-  "flash/flash-1.png",
-  "flash/flash-2.png",
-  "flash/flash-3.png",
-];
 function ProductDetails() {
+  const [productItem, setProductItem] = useState({});
+  const [wishList, setWishList] = useState("");
+
+  const params = useParams();
+  const dispatch = useDispatch();
+
+  const productId = parseInt(params.productId);
+  console.log(productId);
+
+  useEffect(() => {
+    setProductItem(() => {
+      return AllProducts.find((item) => item.id === productId);
+    });
+  }, [productId]);
+
+  console.log(productItem);
+
+  function addToWishList() {
+    setWishList((prev) => !prev);
+    dispatch(
+      wishListActions.add({
+        id: productItem.id,
+        title: productItem.title,
+        price: productItem.price,
+        image: productItem.image,
+      })
+    );
+  }
+
+  function addToCart() {
+    dispatch(
+      cartActions.add({
+        id: productItem.id,
+        title: productItem.title,
+        price: productItem.price,
+        image: productItem.image,
+      })
+    );
+  }
+
   return (
     <div className={classes["product-details"]}>
       <div className={classes.content}>
@@ -25,7 +66,7 @@ function ProductDetails() {
               modules={[EffectCards]}
               className={sliderStyle.swiper}
             >
-              {imageList.map((img, index) => {
+              {productItem.images?.map((img, index) => {
                 return (
                   <SwiperSlide
                     key={index}
@@ -41,9 +82,9 @@ function ProductDetails() {
           </div>
           <div className={classes["info"]}>
             <div className={classes.title}>
-              <h1>Classic Rolex Watch</h1>
+              <h1>{productItem.title}</h1>
               <span className={classes.brand}>
-                Brand: <span>Ziaomi</span>
+                Brand: <span>{productItem.brand}</span>
               </span>
             </div>
             <div className={classes.rate}>
@@ -54,11 +95,17 @@ function ProductDetails() {
               <AiFillStar className={classes.star} />
             </div>
             <div className={classes.price}>
-              <h4>42.00$</h4>
+              <h4>{productItem.price}$</h4>
               <span>Stock Available</span>
             </div>
             <div className={classes.cart}>
-              <button>Add To Cart</button>
+              <button onClick={addToCart}>Add To Cart</button>
+              <span>
+                <HiOutlineHeart
+                  onClick={addToWishList}
+                  className={wishList && classes.active}
+                />
+              </span>
             </div>
           </div>
         </div>

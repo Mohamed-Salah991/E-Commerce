@@ -71,6 +71,10 @@
   font-size: 18px;
   cursor: pointer;
 }
+.amount-controller .disable {
+  background-color: #576174a6;
+  cursor: not-allowed;
+}
 
 .amount-controller span {
   font-size: 18px;

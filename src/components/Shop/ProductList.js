@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import classes from "./ProductList.module.css";
 import ProductItem from "../Product/ProductItem";
 import Pagination from "./Pagination";
+import ProductItemList from "./ProductItemList";
 
 function ProductList(props) {
   console.log("Product List");
@@ -24,15 +25,31 @@ function ProductList(props) {
 
   return (
     <div className={classes["product-list"]}>
-      <div className={classes.content}>
+      <div
+        className={`${classes["content"]} ${
+          props.gridView ? "" : classes.list
+        }`}
+      >
         {orderedProducts?.map((item) => {
-          return (
+          return props.gridView ? (
             <ProductItem
               key={item.id}
               id={item.id}
               image={item.images[0]}
               title={item.title}
               price={item.price}
+              description={item.description}
+              brand={item.brand}
+            />
+          ) : (
+            <ProductItemList
+              key={item.id}
+              id={item.id}
+              image={item.images[0]}
+              title={item.title}
+              price={item.price}
+              description={item.description}
+              brand={item.brand}
             />
           );
         })}

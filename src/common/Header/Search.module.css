@@ -40,7 +40,7 @@
 
   height: 60px;
 }
-.search-result a {
+.search-result .title {
   padding: 5px 0;
   font-size: 15px;
   transition: all 0.3s ease;

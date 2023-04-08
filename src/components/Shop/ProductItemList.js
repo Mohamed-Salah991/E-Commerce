@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import classes from "./ProductItem.module.css";
-
+import classes from "./ProductItemList.module.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/Cart";
 import { wishListActions } from "../../store/Whish-List";
@@ -12,8 +11,9 @@ import { HiOutlineHeart } from "react-icons/hi";
 import { FiBarChart2 } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
-function ProductItem(props) {
-  const { image, title, price, id } = props;
+function ProductItemList(props) {
+  const { image, title, price, id, description, brand } = props;
+  console.log(description);
   const [wishList, setWishList] = useState("");
 
   const dispatch = useDispatch();
@@ -57,6 +57,14 @@ function ProductItem(props) {
         <Link to={`/${id}`}>
           <h3 className={classes.title}>{title}</h3>
         </Link>
+        <div>
+          <span className={classes.brand}>
+            Brand: <span>{brand}</span>
+          </span>
+        </div>
+        <div className={classes.description}>
+          <p>{description}</p>
+        </div>
         <div className={classes.rate}>
           <AiFillStar className={classes.star} />
           <AiFillStar className={classes.star} />
@@ -87,4 +95,4 @@ function ProductItem(props) {
   );
 }
 
-export default ProductItem;
+export default ProductItemList;

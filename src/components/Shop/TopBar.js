@@ -10,6 +10,10 @@ function TopBar(props) {
   const changeFilterHandler = () => {
     props.changeFilterState();
   };
+  const changeViewHandler = (current) => {
+    if (current === "grid") props.setGridView(true);
+    else props.setGridView(false);
+  };
   const changeSortingHandler = (event) => {
     console.log("Event", event.target.value);
     props.setSortItem(event.target.value);
@@ -41,10 +45,10 @@ function TopBar(props) {
           </select>
         </div>
         <div className={classes.view}>
-          <button>
+          <button onClick={() => changeViewHandler("grid")}>
             <HiOutlineViewGrid />
           </button>
-          <button>
+          <button onClick={() => changeViewHandler("list")}>
             <BsList />
           </button>
           <button

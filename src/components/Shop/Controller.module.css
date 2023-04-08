@@ -5,8 +5,10 @@
   width: 90%;
   margin: 30px auto;
   display: flex;
+  justify-content: flex-start;
 }
 
 .products {
   width: 100%;
+  margin: 0 auto;
 }

@@ -19,8 +19,9 @@ function CartItem({ image, title, brand, price, id, quantity }) {
           </div>
           <div className={classes["amount-controller"]}>
             <button
+              className={`${quantity === 1 ? classes.disable : ""}`}
               onClick={() => {
-                dispatch(cartActions.decrement({ id }));
+                if (quantity > 1) dispatch(cartActions.decrement({ id }));
               }}
             >
               -

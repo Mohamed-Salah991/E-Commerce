@@ -24,6 +24,9 @@
   margin-top: 20px;
 }
 
+.wrapper .item {
+  height: 380px;
+}
 /* Slider  */
 .control-btn-prev {
   position: absolute;

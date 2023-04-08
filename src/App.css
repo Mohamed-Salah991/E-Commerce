@@ -1,3 +1,10 @@
+body {
+  /* background: linear-gradient(
+      rgba(255, 255, 255, 1) 0%,
+      rgba(251, 251, 251, 0.1) 100%
+    ),
+    linear-gradient(90deg, #84d2ff, #8d5acd) !important; */
+}
 .img-slider {
   width: 100px;
   height: 100px;
