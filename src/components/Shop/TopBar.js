@@ -15,7 +15,6 @@ function TopBar(props) {
     else props.setGridView(false);
   };
   const changeSortingHandler = (event) => {
-    console.log("Event", event.target.value);
     props.setSortItem(event.target.value);
   };
 

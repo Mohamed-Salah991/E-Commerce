@@ -5,8 +5,6 @@ import Pagination from "./Pagination";
 import ProductItemList from "./ProductItemList";
 
 function ProductList(props) {
-  console.log("Product List");
-
   useEffect(() => {
     window.scrollTo(0, 0);
     setProductList(props.productList);

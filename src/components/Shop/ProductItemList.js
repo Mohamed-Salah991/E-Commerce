@@ -13,7 +13,6 @@ import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 function ProductItemList(props) {
   const { image, title, price, id, description, brand } = props;
-  console.log(description);
   const [wishList, setWishList] = useState("");
 
   const dispatch = useDispatch();

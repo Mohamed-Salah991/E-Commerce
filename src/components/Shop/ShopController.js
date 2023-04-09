@@ -365,7 +365,10 @@ function ShopController() {
   const [productList, setProductList] = useState([]);
   const [filterItem, setFilterItem] = useState("all");
   const [sortItem, setSortItem] = useState("none");
-  const [filteredProduct, setCurrentProducts] = useState([]);
+  const [filteredProduct, setFilteredProducts] = useState([]);
+  const [sortedProduct, setSortedProducts] = useState([]);
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -373,11 +376,8 @@ function ShopController() {
       const res = await fetch("");
       const data = await res.json();
 
-      console.log("Get Data !");
-
       setProductList(AllProducts);
 
-      console.log("Product List", data);
       // data.products.forEach((product) => {
       //   console.log(product);
       // });
@@ -392,22 +392,7 @@ function ShopController() {
     setShowFilterBar((prev) => !prev);
   };
 
-  // Filter
-  // let filteredProduct = productList.filter((product) => {
-  //   if (filterItem === "smartphones") {
-  //     return product.category === "smartphones";
-  //   } else if (filterItem === "laptops") {
-  //     return product.category === "laptops";
-  //   } else if (filterItem === "watches") {
-  //     return (
-  //       product.category === "mens-watches" ||
-  //       product.category === "womens-watches"
-  //     );
-  //   }
-  //   // return all products
-  //   return product;
-  // });
-
+  // Filter;
   useEffect(() => {
     let filteredProduct = productList.filter((product) => {
       if (filterItem === "smartphones") {
@@ -424,30 +409,36 @@ function ShopController() {
       return product;
     });
 
-    setCurrentProducts(filteredProduct);
-  }, [filterItem, productList]);
+    let filteredBrandProduct = [];
+    if (selectedBrands.length > 0) {
+      filteredBrandProduct = filteredProduct.filter((product) =>
+        selectedBrands.includes(product.brand)
+      );
+    } else {
+      filteredBrandProduct = filteredProduct;
+    }
 
-  // sorting
-  const sortedProduct =
-    sortItem === "low"
-      ? filteredProduct.sort((a, b) => a.price - b.price)
-      : sortItem === "high"
-      ? filteredProduct.sort((a, b) => b.price - a.price)
-      : filteredProduct;
+    setFilteredProducts(filteredBrandProduct);
+  }, [filterItem, productList, selectedBrands]);
 
-  function filteredProductsHandler(selectedBrands) {
-    console.log(selectedBrands);
-    const filteredBrandProduct = filteredProduct.filter((product) => {
-      if (selectedBrands.length === 0) {
-        // No brands selected, show all products
-        return product;
-      } else {
-        // Show products that match any of the selected brands
-        return selectedBrands.some((brand) => product.brand.includes(brand));
-      }
-    });
+  // Sorting
+  useEffect(() => {
+    let sortedProduct = [];
+    if (sortItem === "low") {
+      sortedProduct = filteredProduct.sort((a, b) => a.price - b.price);
+    } else if (sortItem === "high") {
+      sortedProduct = filteredProduct.sort((a, b) => b.price - a.price);
+    } else {
+      sortedProduct = filteredProduct.sort((a, b) => a.id - b.id);
+    }
 
-    setCurrentProducts(filteredBrandProduct);
+    setSortedProducts(sortedProduct);
+    setReload((e) => !e);
+  }, [sortItem, setSortItem, filteredProduct, setFilteredProducts]);
+
+  // Filter Brand Handler
+  function filteredBrandsHandler(selectedBrands) {
+    setSelectedBrands(selectedBrands);
   }
 
   return (
@@ -457,7 +448,7 @@ function ShopController() {
           <TopBar
             setGridView={setGridView}
             gridView={gridView}
-            productsLength={sortedProduct.length}
+            productsLength={15}
             filterItem={filterItem}
             changeFilterState={showFilterHandler}
             setSortItem={setSortItem}
@@ -465,13 +456,13 @@ function ShopController() {
         </div>
         <div className={classes["down"]}>
           <FilterBar
-            productsList={productList}
+            productsList={AllProducts}
             setFilterItem={setFilterItem}
             filterItem={filterItem}
             filteredProduct={filteredProduct}
             showFilter={showFilterBar}
             changeFilterState={showFilterHandler}
-            filteredProducts={filteredProductsHandler}
+            filteredProducts={filteredBrandsHandler}
           />
           <div className={classes["products"]}>
             <ProductList gridView={gridView} productList={sortedProduct} />
