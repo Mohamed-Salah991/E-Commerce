@@ -1,9 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./FilterBar.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
+
+/**
+ *  smart Phones
+ * Apple
+ * Samsung
+ * OPPO
+ * Huawei
+ *
+ *   laptops
+ * Apple
+ * Samsung
+ * Microsoft Surface
+ * Infinix
+ * HP Pavilion
+ *
+ *    watches
+ * Naviforce
+ * SKMEI 9117
+ * Strap Skeleton
+ * Stainless
+ * Eastern Watches
+ * Luxury Digital
+ * Watch Pearls
+ * Bracelet
+ */
+
+/* <div className={classes["list"]}>
+<div>
+  <input type="checkbox" id="Apple" name="brand" value="Apple" />
+  <label htmlFor="Apple">Apple</label>
+</div>
+<div>
+  <input type="checkbox" id="Samsung" name="brand" value="Samsung" />
+  <label htmlFor="Samsung">Samsung</label>
+</div>
+<div>
+  <input type="checkbox" id="Huawei" name="brand" value="Huawei" />
+  <label htmlFor="Huawei">Huawei</label>
+</div>
+<div>
+  <input type="checkbox" id="Infinix" name="brand" value="Infinix" />
+  <label htmlFor="Infinix">Infinix</label>
+</div>
+</div> */
+
 function FilterBar(props) {
   const showFilter = props.showFilter;
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [brandItems, setBrandItems] = useState([]);
+  // setBrandItems(removeDuplicated);
+
+  useEffect(() => {
+    let initBrandItems = props.productsList.map((item) => {
+      return item.brand;
+    });
+    initBrandItems = [...new Set(initBrandItems)];
+    setBrandItems(initBrandItems);
+  }, [props.productsList]);
+
+  // useEffect(() => {
+  //   let currentBrandItems = props.productsList.filter((item) => {
+  //     return item.brand === props.filterItem ? item.brand : undefined;
+  //   });
+  //   currentBrandItems = [...new Set(currentBrandItems)];
+  //   // console.log(currentBrandItems);
+  //   setBrandItems(currentBrandItems);
+  // }, [props.filterItem, props.productsList]);
+
   const filterHandler = (event) => {
     const item = event.target.value;
     console.log("Item ", item);
@@ -14,6 +80,24 @@ function FilterBar(props) {
       props.changeFilterState();
     }
   };
+
+  const selectedBrandsHandler = (e) => {
+    const brand = e.target.value;
+    console.log(brand);
+    setSelectedBrands((selectedBrands) => {
+      if (e.target.checked) {
+        return [...selectedBrands, brand];
+      } else {
+        return selectedBrands.filter((item) => item !== brand);
+      }
+    });
+
+    console.log("-------------------------");
+  };
+
+  useEffect(() => {
+    props.filteredProducts(selectedBrands);
+  }, [selectedBrands]);
 
   return (
     <div className={`${classes["filter-bar"]} ${showFilter && classes.active}`}>
@@ -66,31 +150,23 @@ function FilterBar(props) {
           </div>
         </div>
       </div>
-      <div className={classes["price-range"]}>
-        <h3>Price Range</h3>
-        <div className={classes["price-progress"]}>
-          <span>*****************</span>
-        </div>
-      </div>
       <div className={classes.brand}>
         <h3>Brand</h3>
         <div className={classes["list"]}>
-          <div>
-            <input type="checkbox" id="Apple" name="brand" value="Apple" />
-            <label htmlFor="Apple">Apple</label>
-          </div>
-          <div>
-            <input type="checkbox" id="Samsung" name="brand" value="Samsung" />
-            <label htmlFor="Samsung">Samsung</label>
-          </div>
-          <div>
-            <input type="checkbox" id="Huawei" name="brand" value="Huawei" />
-            <label htmlFor="Huawei">Huawei</label>
-          </div>
-          <div>
-            <input type="checkbox" id="Infinix" name="brand" value="Infinix" />
-            <label htmlFor="Infinix">Infinix</label>
-          </div>
+          {brandItems.map((item) => {
+            return (
+              <div key={item}>
+                <input
+                  onChange={selectedBrandsHandler}
+                  type="checkbox"
+                  id={item}
+                  name="brand"
+                  value={item}
+                />
+                <label htmlFor={item}>{item}</label>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className={classes.rating}>

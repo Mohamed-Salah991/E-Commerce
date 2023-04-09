@@ -365,37 +365,8 @@ function ShopController() {
   const [productList, setProductList] = useState([]);
   const [filterItem, setFilterItem] = useState("all");
   const [sortItem, setSortItem] = useState("none");
+  const [filteredProduct, setCurrentProducts] = useState([]);
 
-  /**
-   * 1- Clothes
-   * 2- Electronics
-   * 3- Furniture
-   * 4- Shoes
-   *[
-  "smartphones",
-  "laptops",
-  "fragrances",
-  "skincare",
-  "groceries",
-  "home-decoration",
-  "furniture",
-  "tops",
-  "womens-dresses",
-  "womens-shoes",
-  "mens-shirts",
-  "mens-shoes",
-  "mens-watches",
-  "womens-watches",
-  "womens-bags",
-  "womens-jewellery",
-  "sunglasses",
-  "automotive",
-  "motorcycle",
-  "lighting"
-]
-  
-   */
-  // https://api.escuelajs.co/api/v1/products/?categoryId=2
   useEffect(() => {
     const fetchData = async () => {
       // https://dummyjson.com/products
@@ -421,34 +392,63 @@ function ShopController() {
     setShowFilterBar((prev) => !prev);
   };
 
-  productList.forEach((item) => {
-    console.log("Product List", item.brand);
-  });
-
   // Filter
-  const filteredProduct = productList.filter((product) => {
-    if (filterItem === "smartphones") {
-      return product.category === "smartphones";
-    } else if (filterItem === "laptops") {
-      return product.category === "laptops";
-    } else if (filterItem === "watches") {
-      return (
-        product.category === "mens-watches" ||
-        product.category === "womens-watches"
-      );
-    }
-    // return all products
-    return product;
-  });
+  // let filteredProduct = productList.filter((product) => {
+  //   if (filterItem === "smartphones") {
+  //     return product.category === "smartphones";
+  //   } else if (filterItem === "laptops") {
+  //     return product.category === "laptops";
+  //   } else if (filterItem === "watches") {
+  //     return (
+  //       product.category === "mens-watches" ||
+  //       product.category === "womens-watches"
+  //     );
+  //   }
+  //   // return all products
+  //   return product;
+  // });
+
+  useEffect(() => {
+    let filteredProduct = productList.filter((product) => {
+      if (filterItem === "smartphones") {
+        return product.category === "smartphones";
+      } else if (filterItem === "laptops") {
+        return product.category === "laptops";
+      } else if (filterItem === "watches") {
+        return (
+          product.category === "mens-watches" ||
+          product.category === "womens-watches"
+        );
+      }
+      // return all products
+      return product;
+    });
+
+    setCurrentProducts(filteredProduct);
+  }, [filterItem, productList]);
 
   // sorting
-
   const sortedProduct =
     sortItem === "low"
       ? filteredProduct.sort((a, b) => a.price - b.price)
       : sortItem === "high"
       ? filteredProduct.sort((a, b) => b.price - a.price)
       : filteredProduct;
+
+  function filteredProductsHandler(selectedBrands) {
+    console.log(selectedBrands);
+    const filteredBrandProduct = filteredProduct.filter((product) => {
+      if (selectedBrands.length === 0) {
+        // No brands selected, show all products
+        return product;
+      } else {
+        // Show products that match any of the selected brands
+        return selectedBrands.some((brand) => product.brand.includes(brand));
+      }
+    });
+
+    setCurrentProducts(filteredBrandProduct);
+  }
 
   return (
     <div className={classes["product-controller"]}>
@@ -465,9 +465,13 @@ function ShopController() {
         </div>
         <div className={classes["down"]}>
           <FilterBar
+            productsList={productList}
             setFilterItem={setFilterItem}
+            filterItem={filterItem}
+            filteredProduct={filteredProduct}
             showFilter={showFilterBar}
             changeFilterState={showFilterHandler}
+            filteredProducts={filteredProductsHandler}
           />
           <div className={classes["products"]}>
             <ProductList gridView={gridView} productList={sortedProduct} />
