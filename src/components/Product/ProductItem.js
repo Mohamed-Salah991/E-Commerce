@@ -13,7 +13,8 @@ import { FiBarChart2 } from "react-icons/fi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 function ProductItem(props) {
-  const { image, title, price, id } = props;
+  const { image, title, price, id, rate } = props;
+
   const [wishList, setWishList] = useState("");
 
   const dispatch = useDispatch();
@@ -58,10 +59,16 @@ function ProductItem(props) {
           <h3 className={classes.title}>{title}</h3>
         </Link>
         <div className={classes.rate}>
-          <AiFillStar className={classes.star} />
-          <AiFillStar className={classes.star} />
-          <AiFillStar className={classes.star} />
-          <AiFillStar className={classes.star} />
+          {Array.from({ length: parseInt(rate) }).map((_, index) => (
+            <AiFillStar key={index} className={classes.star} />
+          ))}
+          {Array.from({ length: 5 - parseInt(rate) }).map((_, index) => (
+            <AiFillStar
+              key={index}
+              className={`${classes.star} ${classes.blur}`}
+            />
+          ))}
+          <span>({parseInt(rate)})</span>
         </div>
         <div className={classes.price}>
           <h4>{price} $</h4>

@@ -6,6 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 function FilterBar(props) {
   const showFilter = props.showFilter;
   const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedRates, setSelectedRate] = useState([]);
   const [brandItems, setBrandItems] = useState([]);
 
   useEffect(() => {
@@ -35,6 +36,7 @@ function FilterBar(props) {
 
   const filterHandler = (event) => {
     clearSelectedBrandsHandler();
+    setSelectedRate([]);
     const item = event.target.value;
     props.setFilterItem(item);
     if (window.screen.width <= 768) {
@@ -58,9 +60,25 @@ function FilterBar(props) {
     });
   };
 
+  const selectedRatesHandler = (e) => {
+    const rate = e.target.value;
+    console.log(rate);
+    setSelectedRate((selectedRates) => {
+      if (e.target.checked) {
+        return [...selectedRates, parseInt(rate)];
+      } else {
+        return selectedRates.filter((item) => item !== parseInt(rate));
+      }
+    });
+  };
+
   useEffect(() => {
     props.filteredProducts(selectedBrands);
   }, [selectedBrands]);
+
+  useEffect(() => {
+    props.filterRateProducts(selectedRates);
+  }, [selectedRates]);
 
   return (
     <div className={`${classes["filter-bar"]} ${showFilter && classes.active}`}>
@@ -136,46 +154,28 @@ function FilterBar(props) {
       <div className={classes.rating}>
         <h3>Rating</h3>
         <div className={classes["list"]}>
-          <div>
-            <input type="checkbox" id="rate-5" name="rating" value="rate-5" />
-            <label htmlFor="rate-5">
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="rate-4" name="rating" value="rate-4" />
-            <label htmlFor="rate-4">
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="rate-3" name="rating" value="rate-3" />
-            <label htmlFor="rate-3">
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="rate-2" name="rating" value="rate-2" />
-            <label htmlFor="rate-2">
-              <AiFillStar />
-              <AiFillStar />
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="rate-1" name="rating" value="rate-1" />
-            <label htmlFor="rate-1">
-              <AiFillStar />
-            </label>
-          </div>
+          {Array.from({ length: 5 }).map((item, index) => {
+            const rate = 5 - index;
+            return (
+              <div key={index}>
+                <input
+                  type="checkbox"
+                  id={rate}
+                  name="rating"
+                  value={rate}
+                  onChange={selectedRatesHandler}
+                  checked={selectedRates.includes(rate)}
+                />
+                {Array.from({ length: rate }).map((_, index) => {
+                  return (
+                    <label key={index} htmlFor={rate}>
+                      <AiFillStar />
+                    </label>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

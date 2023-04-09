@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import classes from "./Search.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AllProducts } from "../../components/Shop/ShopController";
 
 function Search() {
   const [filteredData, setFilteredData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
 
   const showProductDetailsHandler = () => {
     setFilteredData([]);
@@ -22,6 +23,13 @@ function Search() {
 
     if (value === "") setFilteredData([]);
     else setFilteredData(newFilter);
+  };
+
+  const searchBtnHandler = () => {
+    navigate({
+      pathname: "/shop",
+      search: `/query=${searchValue}`,
+    });
   };
 
   return (
@@ -64,7 +72,9 @@ function Search() {
         )}
       </div>
       <div>
-        <button className={classes.button}>Search</button>
+        <button onClick={searchBtnHandler} className={classes.button}>
+          Search
+        </button>
       </div>
     </div>
   );

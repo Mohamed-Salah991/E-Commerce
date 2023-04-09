@@ -31,7 +31,7 @@ export const AllProducts = [
       "Samsung's new variant which goes beyond Galaxy to the Universe",
     price: 1249,
     discountPercentage: 15.46,
-    rating: 4.09,
+    rating: 3,
     stock: 36,
     brand: "Samsung",
     category: "smartphones",
@@ -64,7 +64,7 @@ export const AllProducts = [
       "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
     price: 499,
     discountPercentage: 10.58,
-    rating: 4.09,
+    rating: 4,
     stock: 32,
     brand: "Huawei",
     category: "smartphones",
@@ -82,7 +82,7 @@ export const AllProducts = [
       "MacBook Pro 2021 with mini-LED display may launch between September, November",
     price: 1749,
     discountPercentage: 11.02,
-    rating: 4.57,
+    rating: 5,
     stock: 83,
     brand: "Apple",
     category: "laptops",
@@ -101,7 +101,7 @@ export const AllProducts = [
       "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
     price: 1499,
     discountPercentage: 4.15,
-    rating: 4.25,
+    rating: 4,
     stock: 50,
     brand: "Samsung",
     category: "laptops",
@@ -120,7 +120,7 @@ export const AllProducts = [
       "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
     price: 1499,
     discountPercentage: 10.23,
-    rating: 4.43,
+    rating: 3,
     stock: 68,
     brand: "Microsoft Surface",
     category: "laptops",
@@ -140,7 +140,7 @@ export const AllProducts = [
       "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
     price: 1099,
     discountPercentage: 11.83,
-    rating: 4.54,
+    rating: 1,
     stock: 96,
     brand: "Infinix",
     category: "laptops",
@@ -160,7 +160,7 @@ export const AllProducts = [
       "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
     price: 1099,
     discountPercentage: 6.18,
-    rating: 4.43,
+    rating: 5,
     stock: 89,
     brand: "HP Pavilion",
     category: "laptops",
@@ -177,7 +177,7 @@ export const AllProducts = [
     description: "Style:Sport ,Clasp:Buckles ,Water Resistance Depth:3Bar",
     price: 120,
     discountPercentage: 7.14,
-    rating: 4.63,
+    rating: 1,
     stock: 91,
     brand: "Naviforce",
     category: "mens-watches",
@@ -193,7 +193,7 @@ export const AllProducts = [
     title: "Waterproof Leather Brand Watch",
     description:
       "Watch Crown With Environmental IPS Bronze Electroplating; Display system of 12 hours",
-    price: 46,
+    price: 4,
     discountPercentage: 3.15,
     rating: 4.05,
     stock: 95,
@@ -212,7 +212,7 @@ export const AllProducts = [
       "Men Silver Chain Royal Blue Premium Watch Latest Analog Watch",
     price: 50,
     discountPercentage: 2.56,
-    rating: 4.89,
+    rating: 2,
     stock: 142,
     brand: "SKMEI 9117",
     category: "mens-watches",
@@ -231,7 +231,7 @@ export const AllProducts = [
       "Leather Strap Skeleton Watch for Men - Stylish and Latest Design",
     price: 46,
     discountPercentage: 10.2,
-    rating: 4.98,
+    rating: 1,
     stock: 61,
     brand: "Strap Skeleton",
     category: "mens-watches",
@@ -250,7 +250,7 @@ export const AllProducts = [
       "Stylish Watch For Man (Luxury) Classy Men's Stainless Steel Wrist Watch - Box Packed",
     price: 47,
     discountPercentage: 17.79,
-    rating: 4.79,
+    rating: 4,
     stock: 94,
     brand: "Stainless",
     category: "mens-watches",
@@ -269,7 +269,7 @@ export const AllProducts = [
     description: "Elegant design, Stylish ,Unique & Trendy,Comfortable wear",
     price: 35,
     discountPercentage: 3.23,
-    rating: 4.79,
+    rating: 2,
     stock: 24,
     brand: "Eastern Watches",
     category: "womens-watches",
@@ -289,7 +289,7 @@ export const AllProducts = [
       "Buy this awesome  The product is originally manufactured by the company and it's a top selling product with a very reasonable",
     price: 60,
     discountPercentage: 16.69,
-    rating: 4.03,
+    rating: 3,
     stock: 46,
     brand: "Eastern Watches",
     category: "womens-watches",
@@ -309,7 +309,7 @@ export const AllProducts = [
       "Stylish Luxury Digital Watch For Girls / Women - Led Smart Ladies Watches For Girls",
     price: 57,
     discountPercentage: 9.03,
-    rating: 4.55,
+    rating: 4,
     stock: 77,
     brand: "Luxury Digital",
     category: "womens-watches",
@@ -326,7 +326,7 @@ export const AllProducts = [
       "Product details of Golden Watch Pearls Bracelet Watch For Girls - Golden Chain Ladies Bracelate Watch for Women",
     price: 47,
     discountPercentage: 17.55,
-    rating: 4.77,
+    rating: 5,
     stock: 89,
     brand: "Watch Pearls",
     category: "womens-watches",
@@ -346,7 +346,7 @@ export const AllProducts = [
       "Fashion Skmei 1830 Shell Dial Stainless Steel Women Wrist Watch Lady Bracelet Watch Quartz Watches Ladies",
     price: 35,
     discountPercentage: 8.98,
-    rating: 4.08,
+    rating: 3,
     stock: 111,
     brand: "Bracelet",
     category: "womens-watches",
@@ -368,6 +368,8 @@ function ShopController() {
   const [filteredProduct, setFilteredProducts] = useState([]);
   const [sortedProduct, setSortedProducts] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedRates, setSelectedRate] = useState([]);
+
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
@@ -418,8 +420,19 @@ function ShopController() {
       filteredBrandProduct = filteredProduct;
     }
 
-    setFilteredProducts(filteredBrandProduct);
-  }, [filterItem, productList, selectedBrands]);
+    console.log(filteredBrandProduct);
+
+    let filterRateProduct = [];
+    if (selectedRates.length > 0) {
+      filterRateProduct = filteredBrandProduct.filter((product) =>
+        selectedRates.includes(parseInt(product.rating))
+      );
+    } else {
+      filterRateProduct = filteredBrandProduct;
+    }
+
+    setFilteredProducts(filterRateProduct);
+  }, [filterItem, productList, selectedBrands, selectedRates]);
 
   // Sorting
   useEffect(() => {
@@ -441,6 +454,11 @@ function ShopController() {
     setSelectedBrands(selectedBrands);
   }
 
+  // Filter Rate Handler
+  function filterRateHandler(selectedRates) {
+    console.log(selectedRates);
+    setSelectedRate(selectedRates);
+  }
   return (
     <div className={classes["product-controller"]}>
       <div className={classes.content}>
@@ -448,10 +466,10 @@ function ShopController() {
           <TopBar
             setGridView={setGridView}
             gridView={gridView}
-            productsLength={15}
             filterItem={filterItem}
             changeFilterState={showFilterHandler}
             setSortItem={setSortItem}
+            productsFoundLength={filteredProduct.length}
           />
         </div>
         <div className={classes["down"]}>
@@ -463,6 +481,7 @@ function ShopController() {
             showFilter={showFilterBar}
             changeFilterState={showFilterHandler}
             filteredProducts={filteredBrandsHandler}
+            filterRateProducts={filterRateHandler}
           />
           <div className={classes["products"]}>
             <ProductList gridView={gridView} productList={sortedProduct} />

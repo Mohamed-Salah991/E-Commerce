@@ -41,6 +41,33 @@
   display: none;
 }
 
+.brand .list {
+  max-height: 250px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+/* width */
+.brand .list::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.brand .list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.brand .list::-webkit-scrollbar-thumb {
+  background: #263041;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.brand .list::-webkit-scrollbar-thumb:hover {
+  background: #3e485a;
+}
+
 @media (max-width: 768px) {
   .filter-bar {
     position: absolute;

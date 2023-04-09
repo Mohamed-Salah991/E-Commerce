@@ -88,12 +88,22 @@ div.brand {
   color: black;
 }
 .rate {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.rate span {
+  margin-left: 3px;
+  color: #e94560;
 }
 .star {
   font-size: 20px;
   color: #ffcd4e;
   margin: 5px 0;
   cursor: default;
+}
+.blur {
+  color: #747a879c;
 }
 
 .title {

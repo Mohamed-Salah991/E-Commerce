@@ -38,6 +38,7 @@ function ProductList(props) {
               price={item.price}
               description={item.description}
               brand={item.brand}
+              rate={item.rating}
             />
           ) : (
             <ProductItemList
@@ -48,6 +49,7 @@ function ProductList(props) {
               price={item.price}
               description={item.description}
               brand={item.brand}
+              rate={item.rating}
             />
           );
         })}

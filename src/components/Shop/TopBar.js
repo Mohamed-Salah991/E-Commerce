@@ -5,7 +5,7 @@ import { BsList } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
 function TopBar(props) {
   const filterItem = props.filterItem;
-  const productsLength = props.productsLength;
+  const productsLength = props.productsFoundLength;
 
   const changeFilterHandler = () => {
     props.changeFilterState();
