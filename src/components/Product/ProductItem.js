@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./ProductItem.module.css";
-
+import QuickView from "./QuickView";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/Cart";
 import { wishListActions } from "../../store/Whish-List";
@@ -16,6 +16,7 @@ function ProductItem(props) {
   const { image, title, price, id, rate } = props;
 
   const [wishList, setWishList] = useState("");
+  const [showQuickView, setShowQuickView] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,18 +32,25 @@ function ProductItem(props) {
     );
   }
 
+  function showQuickViewHandler() {
+    // show quick view component, model
+    setShowQuickView((prev) => !prev);
+  }
+
   return (
     <div
       className={`${classes["item"]} ${
         props.height ? `${classes.item} ${classes.homePage}` : ""
       }`}
     >
+      {showQuickView && <QuickView id={2} onClose={showQuickViewHandler} />}
+
       <span className={classes["right-items"]}>
         <HiOutlineHeart
           onClick={addToWishList}
           className={wishList && classes.active}
         />
-        <MdOutlineRemoveRedEye />
+        <MdOutlineRemoveRedEye onClick={showQuickViewHandler} />
         <FiBarChart2 />
       </span>
       {props?.discount && (

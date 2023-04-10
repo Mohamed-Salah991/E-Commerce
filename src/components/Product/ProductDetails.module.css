@@ -14,7 +14,12 @@
   justify-content: center;
   /* align-items: center; */
 }
-
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 .images .image img {
   display: block;
   max-width: 100%;

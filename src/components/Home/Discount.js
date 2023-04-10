@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 SwiperCore.use([Navigation]);
+
 function Discount() {
   const discountList = [
     {
@@ -155,7 +156,6 @@ function Discount() {
           spaceBetween={30}
           loop={false}
           navigation={true}
-          modules={[Navigation]}
         >
           {discountList.map((item, index) => {
             return (

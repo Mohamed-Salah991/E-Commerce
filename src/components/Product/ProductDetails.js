@@ -4,31 +4,19 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/Cart";
 import { wishListActions } from "../../store/Whish-List";
 
-import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { HiOutlineHeart } from "react-icons/hi";
-import { AllProducts } from "../Shop/ShopController";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import sliderStyle from "./imageSlider.module.css";
 
-function ProductDetails() {
-  const [productItem, setProductItem] = useState({});
+function ProductDetails(props) {
+  const { productItem } = props;
   const [wishList, setWishList] = useState("");
 
-  const params = useParams();
   const dispatch = useDispatch();
-
-  const productId = parseInt(params.productId);
-  console.log(productId);
-
-  useEffect(() => {
-    setProductItem(() => {
-      return AllProducts.find((item) => item.id === productId);
-    });
-  }, [productId]);
 
   console.log(productItem);
 
@@ -120,15 +108,17 @@ function ProductDetails() {
           </div>
         </div>
         <div className={classes.down}>
-          <div className={classes.description}>
-            <h3>Description</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
-              nisi reprehenderit cum reiciendis repellendus, aspernatur odit
-              officiis maiores saepe blanditiis sint ipsam, nesciunt impedit
-              dolores. Aliquam explicabo a obcaecati. Perferendis?
-            </p>
-          </div>
+          {props.quickView || (
+            <div className={classes.description}>
+              <h3>Description</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
+                nisi reprehenderit cum reiciendis repellendus, aspernatur odit
+                officiis maiores saepe blanditiis sint ipsam, nesciunt impedit
+                dolores. Aliquam explicabo a obcaecati. Perferendis?
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
