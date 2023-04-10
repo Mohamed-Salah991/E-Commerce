@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Controller.module.css";
+import { useLocation, useNavigate } from "react-router-dom";
 import FilterBar from "./FilterBar";
 import ProductList from "./ProductList";
 import TopBar from "./TopBar";
@@ -369,8 +370,12 @@ function ShopController() {
   const [sortedProduct, setSortedProducts] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedRates, setSelectedRate] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   const [reload, setReload] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const searchQuery = new URLSearchParams(location.search).get("query");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -390,12 +395,21 @@ function ShopController() {
     setProductList(AllProducts);
   }, []);
 
+  useEffect(() => {
+    console.log(searchQuery);
+    if (searchQuery) {
+      setSearchValue(searchQuery);
+      // navigate("/shop", { search: "" });
+    }
+  }, [searchQuery, navigate]);
+
   const showFilterHandler = () => {
     setShowFilterBar((prev) => !prev);
   };
 
-  // Filter;
+  // Filter
   useEffect(() => {
+    // Category
     let filteredProduct = productList.filter((product) => {
       if (filterItem === "smartphones") {
         return product.category === "smartphones";
@@ -411,6 +425,7 @@ function ShopController() {
       return product;
     });
 
+    // Brand
     let filteredBrandProduct = [];
     if (selectedBrands.length > 0) {
       filteredBrandProduct = filteredProduct.filter((product) =>
@@ -420,8 +435,7 @@ function ShopController() {
       filteredBrandProduct = filteredProduct;
     }
 
-    console.log(filteredBrandProduct);
-
+    // Rate
     let filterRateProduct = [];
     if (selectedRates.length > 0) {
       filterRateProduct = filteredBrandProduct.filter((product) =>
@@ -431,8 +445,20 @@ function ShopController() {
       filterRateProduct = filteredBrandProduct;
     }
 
-    setFilteredProducts(filterRateProduct);
-  }, [filterItem, productList, selectedBrands, selectedRates]);
+    // Search Value
+    let searchValueFilter = [];
+    console.log(searchValue);
+    if (searchValue) {
+      setFilterItem(searchValue);
+      searchValueFilter = filterRateProduct.filter((item) => {
+        return item.title.toLowerCase().includes(searchValue.toLowerCase());
+      });
+    } else {
+      searchValueFilter = filterRateProduct;
+    }
+
+    setFilteredProducts(searchValueFilter);
+  }, [filterItem, productList, selectedBrands, selectedRates, searchValue]);
 
   // Sorting
   useEffect(() => {
@@ -456,9 +482,9 @@ function ShopController() {
 
   // Filter Rate Handler
   function filterRateHandler(selectedRates) {
-    console.log(selectedRates);
     setSelectedRate(selectedRates);
   }
+
   return (
     <div className={classes["product-controller"]}>
       <div className={classes.content}>
@@ -482,6 +508,7 @@ function ShopController() {
             changeFilterState={showFilterHandler}
             filteredProducts={filteredBrandsHandler}
             filterRateProducts={filterRateHandler}
+            setSearchValue={setSearchValue}
           />
           <div className={classes["products"]}>
             <ProductList gridView={gridView} productList={sortedProduct} />

@@ -76,7 +76,7 @@
 
 .button {
   border: none;
-  background-color: black;
+  background-color: #0f3460;
   color: white;
   height: var(--search-input-height);
   font-size: 14px;
@@ -87,7 +87,8 @@
   transition: all 0.3s ease;
 }
 .button:hover {
-  background-color: #5b5757;
+  background-color: black;
+  box-shadow: rgb(3 0 71 / 9%) 5px 5px 5px;
 }
 
 @media (max-width: 768px) {

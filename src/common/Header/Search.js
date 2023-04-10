@@ -11,7 +11,7 @@ function Search() {
 
   const showProductDetailsHandler = () => {
     setFilteredData([]);
-    setSearchValue("");
+    // setSearchValue("");
   };
 
   const handleChangeFilter = (event) => {
@@ -28,8 +28,15 @@ function Search() {
   const searchBtnHandler = () => {
     navigate({
       pathname: "/shop",
-      search: `/query=${searchValue}`,
+      search: `?query=${searchValue}`,
     });
+    setFilteredData([]);
+  };
+
+  const enterButtonHandler = (event) => {
+    if (event.key === "Enter") {
+      searchBtnHandler();
+    }
   };
 
   return (
@@ -37,6 +44,7 @@ function Search() {
       <div className={classes["search-input"]}>
         <input
           value={searchValue}
+          onKeyDown={enterButtonHandler}
           onChange={handleChangeFilter}
           className={classes.input}
           type="search"
@@ -48,7 +56,7 @@ function Search() {
             <ul>
               {filteredData.map((item) => {
                 return (
-                  <li>
+                  <li key={item.id}>
                     <div>
                       <Link
                         onClick={showProductDetailsHandler}

@@ -25,7 +25,6 @@ function Discount() {
       rating: 4.44,
       stock: 34,
       brand: "Apple",
-      discount: 40,
       category: "smartphones",
       thumbnail: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
       images: [
@@ -41,9 +40,8 @@ function Discount() {
       description: "Style:Sport ,Clasp:Buckles ,Water Resistance Depth:3Bar",
       price: 120,
       discountPercentage: 7.14,
-      rating: 4.63,
+      rating: 5,
       stock: 91,
-      discount: 30,
       brand: "Naviforce",
       category: "mens-watches",
       thumbnail: "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
@@ -60,9 +58,8 @@ function Discount() {
         "Samsung's new variant which goes beyond Galaxy to the Universe",
       price: 1249,
       discountPercentage: 15.46,
-      rating: 4.09,
+      rating: 3,
       stock: 36,
-      discount: 70,
       brand: "Samsung",
       category: "smartphones",
       thumbnail: "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
@@ -75,9 +72,8 @@ function Discount() {
         "MacBook Pro 2021 with mini-LED display may launch between September, November",
       price: 1749,
       discountPercentage: 11.02,
-      rating: 4.57,
+      rating: 5,
       stock: 83,
-      discount: 65,
       brand: "Apple",
       category: "laptops",
       thumbnail: "https://i.dummyjson.com/data/products/6/thumbnail.png",
@@ -95,9 +91,8 @@ function Discount() {
         "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
       price: 499,
       discountPercentage: 10.58,
-      rating: 4.09,
+      rating: 4,
       stock: 32,
-      discount: 55,
       brand: "Huawei",
       category: "smartphones",
       thumbnail: "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
@@ -113,9 +108,8 @@ function Discount() {
       description:
         "Men Silver Chain Royal Blue Premium Watch Latest Analog Watch",
       price: 50,
-      discount: 40,
       discountPercentage: 2.56,
-      rating: 4.89,
+      rating: 2,
       stock: 142,
       brand: "SKMEI 9117",
       category: "mens-watches",
@@ -174,6 +168,7 @@ function Discount() {
                     title={item.title}
                     price={item.price}
                     id={item.id}
+                    rate={item.rating}
                   />
                 </div>
               </SwiperSlide>

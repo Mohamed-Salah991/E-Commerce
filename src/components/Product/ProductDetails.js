@@ -89,10 +89,20 @@ function ProductDetails() {
             </div>
             <div className={classes.rate}>
               <span>Rated:</span>
-              <AiFillStar className={classes.star} />
-              <AiFillStar className={classes.star} />
-              <AiFillStar className={classes.star} />
-              <AiFillStar className={classes.star} />
+              {Array.from({ length: parseInt(productItem.rating) }).map(
+                (_, index) => (
+                  <AiFillStar key={index} className={`${classes.star}`} />
+                )
+              )}
+              {Array.from({ length: 5 - parseInt(productItem.rating) }).map(
+                (_, index) => (
+                  <AiFillStar
+                    key={index}
+                    className={`${classes.star} ${classes.blur}`}
+                  />
+                )
+              )}
+              <span>({parseInt(productItem.rating)})</span>
             </div>
             <div className={classes.price}>
               <h4>{productItem.price}$</h4>

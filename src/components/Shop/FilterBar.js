@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./FilterBar.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
@@ -8,6 +9,7 @@ function FilterBar(props) {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedRates, setSelectedRate] = useState([]);
   const [brandItems, setBrandItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(props.filterItem);
@@ -35,8 +37,9 @@ function FilterBar(props) {
   }, [props.productsList, props.filterItem]);
 
   const filterHandler = (event) => {
-    clearSelectedBrandsHandler();
+    setSelectedBrands([]);
     setSelectedRate([]);
+    clearQueryValue();
     const item = event.target.value;
     props.setFilterItem(item);
     if (window.screen.width <= 768) {
@@ -44,8 +47,9 @@ function FilterBar(props) {
     }
   };
 
-  const clearSelectedBrandsHandler = () => {
-    setSelectedBrands([]);
+  const clearQueryValue = () => {
+    props.setSearchValue("");
+    navigate("/shop", { search: "" });
   };
 
   const selectedBrandsHandler = (e) => {
@@ -103,11 +107,11 @@ function FilterBar(props) {
             <input
               onClick={filterHandler}
               type="radio"
-              id="mobiles"
+              id="smartphones"
               name="category"
               value="smartphones"
             />
-            <label htmlFor="mobiles">Mobiles</label>
+            <label htmlFor="smartphones">Smart Phones</label>
           </div>
           <div>
             <input
