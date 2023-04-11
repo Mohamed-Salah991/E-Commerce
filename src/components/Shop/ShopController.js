@@ -184,9 +184,9 @@ export const AllProducts = [
     category: "mens-watches",
     thumbnail: "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
     images: [
+      "https://i.dummyjson.com/data/products/61/3.jpg",
       "https://i.dummyjson.com/data/products/61/1.jpg",
       "https://i.dummyjson.com/data/products/61/2.png",
-      "https://i.dummyjson.com/data/products/61/3.jpg",
     ],
   },
   {
@@ -238,8 +238,8 @@ export const AllProducts = [
     category: "mens-watches",
     thumbnail: "https://i.dummyjson.com/data/products/64/thumbnail.jpg",
     images: [
-      "https://i.dummyjson.com/data/products/64/1.jpg",
       "https://i.dummyjson.com/data/products/64/2.webp",
+      "https://i.dummyjson.com/data/products/64/1.jpg",
       "https://i.dummyjson.com/data/products/64/3.jpg",
       "https://i.dummyjson.com/data/products/64/thumbnail.jpg",
     ],
@@ -257,9 +257,9 @@ export const AllProducts = [
     category: "mens-watches",
     thumbnail: "https://i.dummyjson.com/data/products/65/thumbnail.webp",
     images: [
+      "https://i.dummyjson.com/data/products/65/3.jpg",
       "https://i.dummyjson.com/data/products/65/1.jpg",
       "https://i.dummyjson.com/data/products/65/2.webp",
-      "https://i.dummyjson.com/data/products/65/3.jpg",
       "https://i.dummyjson.com/data/products/65/4.webp",
       "https://i.dummyjson.com/data/products/65/thumbnail.webp",
     ],
@@ -325,7 +325,7 @@ export const AllProducts = [
     title: "Golden Watch Pearls Bracelet Watch",
     description:
       "Product details of Golden Watch Pearls Bracelet Watch For Girls - Golden Chain Ladies Bracelate Watch for Women",
-    price: 47,
+    price: 90,
     discountPercentage: 17.55,
     rating: 5,
     stock: 89,

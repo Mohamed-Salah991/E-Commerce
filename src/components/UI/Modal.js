@@ -1,10 +1,11 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import ReactDOM from "react-dom";
+import { AiOutlineClose } from "react-icons/ai";
 
 import classes from "./Modal.module.css";
 
 const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onClose} />;
+  return <div className={`${classes.backdrop}`} onClick={props.onClose} />;
 };
 
 const ModalOverlay = (props) => {
@@ -25,7 +26,7 @@ const Modal = (props) => {
         portalElement
       )}
       {ReactDOM.createPortal(
-        <ModalOverlay>{props.children}</ModalOverlay>,
+        <ModalOverlay onClose={props.onClose}>{props.children}</ModalOverlay>,
         portalElement
       )}
     </Fragment>

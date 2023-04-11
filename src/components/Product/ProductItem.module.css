@@ -111,10 +111,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .button:hover {
   cursor: pointer;
+  background-color: #e94560;
+  color: #fff;
+}
+.button.active {
   background-color: #e94560;
   color: #fff;
 }

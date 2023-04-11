@@ -42,7 +42,7 @@
 }
 
 .brand .list {
-  max-height: 250px;
+  max-height: 170px;
   overflow: hidden;
   overflow-y: auto;
 }

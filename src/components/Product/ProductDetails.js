@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import classes from "./ProductDetails.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/Cart";
 import { wishListActions } from "../../store/Whish-List";
-
+import { FaCheck } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { HiOutlineHeart } from "react-icons/hi";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,33 +14,58 @@ import sliderStyle from "./imageSlider.module.css";
 
 function ProductDetails(props) {
   const { productItem } = props;
-  const [wishList, setWishList] = useState("");
-
+  const [existingInWishList, setExistingInWishList] = useState();
+  const [existingInCart, setExistingItem] = useState();
   const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.items);
+  const wishListItems = useSelector((store) => store.wishList.items);
+
+  // / set Existing InWishList
+  useEffect(() => {
+    let InCart = cartItems.find((item) => item.id === productItem.id);
+    setExistingItem(InCart);
+    let inWhishList = wishListItems.find((item) => item.id === productItem.id);
+    setExistingInWishList(inWhishList);
+  }, [
+    existingInCart,
+    cartItems,
+    productItem.id,
+    existingInWishList,
+    wishListItems,
+  ]);
 
   console.log(productItem);
 
   function addToWishList() {
-    setWishList((prev) => !prev);
-    dispatch(
-      wishListActions.add({
-        id: productItem.id,
-        title: productItem.title,
-        price: productItem.price,
-        image: productItem.images[0],
-      })
-    );
+    setExistingInWishList((prev) => !prev);
+
+    if (existingInWishList) {
+      const id = productItem.id;
+      dispatch(wishListActions.delete({ id }));
+    } else
+      dispatch(
+        wishListActions.add({
+          id: productItem.id,
+          title: productItem.title,
+          price: productItem.price,
+          image: productItem.images[0],
+        })
+      );
   }
 
   function addToCart() {
-    dispatch(
-      cartActions.add({
-        id: productItem.id,
-        title: productItem.title,
-        price: productItem.price,
-        image: productItem.images[0],
-      })
-    );
+    if (existingInCart) {
+      const id = productItem.id;
+      dispatch(cartActions.delete({ id }));
+    } else
+      dispatch(
+        cartActions.add({
+          id: productItem.id,
+          title: productItem.title,
+          price: productItem.price,
+          image: productItem.images[0],
+        })
+      );
   }
 
   return (
@@ -97,11 +122,22 @@ function ProductDetails(props) {
               <span>Stock Available</span>
             </div>
             <div className={classes.cart}>
-              <button onClick={addToCart}>Add To Cart</button>
+              {existingInCart && (
+                <button onClick={addToCart}>
+                  In Cart
+                  <span className={classes["in-cart-icon"]}>
+                    <FaCheck />
+                  </span>
+                </button>
+              )}
+              {!existingInCart && (
+                <button onClick={addToCart}>Add To Cart</button>
+              )}
+
               <span>
                 <HiOutlineHeart
                   onClick={addToWishList}
-                  className={wishList && classes.active}
+                  className={existingInWishList ? classes.active : undefined}
                 />
               </span>
             </div>

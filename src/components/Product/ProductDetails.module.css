@@ -9,6 +9,7 @@
 
 .images {
   width: 50vw;
+  width: 50%;
   height: 23vw;
   display: flex;
   justify-content: center;
@@ -115,6 +116,11 @@
   margin-left: 10px;
   color: rgb(233, 69, 96);
   cursor: pointer;
+}
+
+.cart span.in-cart-icon svg {
+  font-size: 20px;
+  color: #fff;
 }
 .down {
   margin-top: 100px;

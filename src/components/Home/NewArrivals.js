@@ -5,29 +5,34 @@ import { Link } from "react-router-dom";
 function NewArrivals() {
   const newArrivalsItems = [
     {
-      title: "Product",
-      img: "./arrivals/arrivals1.png",
-      price: 492,
+      title: "Leather Strap",
+      img: "https://i.dummyjson.com/data/products/64/2.webp",
+      price: 46,
+      id: 64,
     },
     {
-      title: "Product",
-      img: "./arrivals/arrivals2.png",
-      price: 492,
+      title: "Fashion Magnetic",
+      img: "https://i.dummyjson.com/data/products/67/1.jpg",
+      price: 60,
+      id: 67,
     },
     {
-      title: "Product",
-      img: "./arrivals/arrivals3.png",
-      price: 492,
+      title: "Golden Watch",
+      img: "https://i.dummyjson.com/data/products/69/1.jpg",
+      id: 69,
+      price: 90,
     },
     {
-      title: "Product",
-      img: "./arrivals/arrivals4.png",
-      price: 492,
+      title: "Stainless Steel",
+      img: "https://i.dummyjson.com/data/products/65/3.jpg",
+      price: 47,
+      id: 65,
     },
     {
-      title: "Product",
-      img: "./arrivals/arrivals5.png",
-      price: 492,
+      title: "Leather Wristwatch",
+      img: "https://i.dummyjson.com/data/products/61/3.jpg",
+      price: 120,
+      id: 61,
     },
   ];
 
@@ -39,13 +44,13 @@ function NewArrivals() {
           {newArrivalsItems.map((item, index) => {
             return (
               <div className={classes.item} key={index}>
-                <Link to="/shop">
+                <Link to={`/${item.id}`}>
                   <div className={classes.image}>
                     <img src={item.img} alt="" />
                   </div>
                 </Link>
                 <div className={classes.price}>
-                  <h4>{`${item.title} ${index + 1}`}</h4>
+                  <h4>{`${item.title}`}</h4>
                   <h4>${item.price}</h4>
                 </div>
               </div>

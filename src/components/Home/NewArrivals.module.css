@@ -29,6 +29,7 @@
 .new-arrivals img {
   width: 100%;
   cursor: pointer;
+  border-radius: 15px;
 }
 .image {
   position: relative;
