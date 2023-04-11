@@ -38,4 +38,12 @@ a {
   width: 100%;
 }
 
-/* End Golbal Rules  */
+.swiper-button-next,
+.swiper-button-prev {
+  padding: 20px;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  pointer-events: unset !important;
+}

@@ -34,22 +34,34 @@ function CartController() {
         </div>
       </div>
       <div className={classes.content}>
-        {cartItemLength === 0 ? <h3>Your Cart Is Empty</h3> : undefined}
+        {cartItemLength === 0 ? (
+          <div style={{ flex: "1" }}>
+            <h3 style={{ fontWeight: "500" }}>Your Cart Is Empty</h3>
+            <img
+              style={{ maxWidth: "100%" }}
+              // src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-4659169-3871550.png"
+              src="empty-cart.png"
+              alt=""
+            />
+          </div>
+        ) : undefined}
+        {cartItemLength !== 0 ? (
+          <div className={classes["cart-list"]}>
+            {cartItems.map((item) => {
+              return (
+                <CartItem
+                  key={item.id}
+                  image={item.image}
+                  title={item.title}
+                  price={item.totalPrice}
+                  id={item.id}
+                  quantity={item.quantity}
+                />
+              );
+            })}
+          </div>
+        ) : undefined}
 
-        <div className={classes["cart-list"]}>
-          {cartItems.map((item) => {
-            return (
-              <CartItem
-                key={item.id}
-                image={item.image}
-                title={item.title}
-                price={item.totalPrice}
-                id={item.id}
-                quantity={item.quantity}
-              />
-            );
-          })}
-        </div>
         <PaymentInfo />
       </div>
     </div>

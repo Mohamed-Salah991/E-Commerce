@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css/pagination";
 
 SwiperCore.use([Navigation]);
 
@@ -153,14 +153,14 @@ function Discount() {
         <Swiper
           breakpoints={breakpoints}
           slidesPerView={1}
-          spaceBetween={30}
+          spaceBetween={10}
           loop={false}
           navigation={true}
         >
           {discountList.map((item, index) => {
             return (
               <SwiperSlide key={index}>
-                <div className={classes.item}>
+                <div className={`${classes.item} ${classes[`item${index}`]}`}>
                   <ProductItem
                     height="100%"
                     discount={item.discount}

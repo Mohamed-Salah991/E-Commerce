@@ -1,6 +1,9 @@
 .product-details {
   margin-top: 120px;
 }
+.quickView {
+  margin-top: 50px;
+}
 .up {
   display: flex;
   justify-content: flex-start;

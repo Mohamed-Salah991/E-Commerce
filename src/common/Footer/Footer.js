@@ -9,6 +9,26 @@ import { BsTwitter } from "react-icons/bs";
 function Footer() {
   return (
     <div className={classes.footer}>
+      <div className={classes["my-info"]}>
+        <h3>
+          Create By <span>Mohamed Salah</span>
+          {/* <span>© 2023</span> */}
+        </h3>
+        <div className={classes.media}>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/mohamed-salah-a74b5b234/">
+                <BsLinkedin />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Mohamed-Salah991">
+                <BsGithub />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className={classes.content}>
         <div className={classes["company-info"]}>
           <a href="/">

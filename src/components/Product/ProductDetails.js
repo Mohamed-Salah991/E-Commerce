@@ -69,7 +69,11 @@ function ProductDetails(props) {
   }
 
   return (
-    <div className={classes["product-details"]}>
+    <div
+      className={`${classes["product-details"]} ${
+        props.quickView && classes.quickView
+      }`}
+    >
       <div className={classes.content}>
         <div className={classes.up}>
           <div className={classes["images"]}>

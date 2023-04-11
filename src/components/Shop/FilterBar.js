@@ -42,6 +42,7 @@ function FilterBar(props) {
     clearQueryValue();
     const item = event.target.value;
     props.setFilterItem(item);
+
     if (window.screen.width <= 768) {
       props.changeFilterState();
     }
@@ -55,6 +56,9 @@ function FilterBar(props) {
   const selectedBrandsHandler = (e) => {
     const brand = e.target.value;
     console.log(brand);
+    // if (window.screen.width <= 768) {
+    //   props.changeFilterState();
+    // }
     setSelectedBrands((selectedBrands) => {
       if (e.target.checked) {
         return [...selectedBrands, brand];
@@ -67,6 +71,9 @@ function FilterBar(props) {
   const selectedRatesHandler = (e) => {
     const rate = e.target.value;
     console.log(rate);
+    // if (window.screen.width <= 768) {
+    //   props.changeFilterState();
+    // }
     setSelectedRate((selectedRates) => {
       if (e.target.checked) {
         return [...selectedRates, parseInt(rate)];

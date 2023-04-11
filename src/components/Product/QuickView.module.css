@@ -1,33 +1,24 @@
 .quick-view {
+  height: 90%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+/* width */
+.quick-view::-webkit-scrollbar {
+  width: 7px;
 }
 .close-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: absolute; */
-  /* right: 15px;
-  top: 15px; */
-  /* transform: translateX(90%); */
+  position: fixed;
+  right: 15px;
+  top: 10px;
   background-color: rgb(15, 52, 96);
-  background-color: red;
   width: 30px;
   height: 30px;
   color: white;
   border-radius: 50%;
   font-size: 18px;
   cursor: pointer;
-}
-
-.rapper {
-  width: inherit;
-  height: 50px;
-  position: relative;
-  top: 0;
-  /* left: 0; */
-  background-color: red;
-  /* background-color: white; */
-
-  border-radius: 14px;
-  /* z-index: 999; */
-  z-index: 80;
 }

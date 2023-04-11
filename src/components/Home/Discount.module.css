@@ -26,7 +26,17 @@
 
 .wrapper .item {
   height: 380px;
+  /* padding: 0 20px; */
 }
+
+/* .wrapper .item0 {
+  margin-left: 20px;
+}
+.wrapper .item5 {
+  margin-right: 20px;
+}
+ */
+
 /* Slider  */
 .control-btn-prev {
   position: absolute;

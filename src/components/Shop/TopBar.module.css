@@ -81,3 +81,13 @@
     width: 100%;
   }
 }
+
+@media (max-width: 550px) {
+  .view button:nth-last-of-type(2),
+  .view button:first-of-type {
+    display: none;
+  }
+  .view {
+    width: 50px;
+  }
+}

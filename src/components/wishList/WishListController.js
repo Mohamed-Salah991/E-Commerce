@@ -30,7 +30,17 @@ function WishListController() {
         </div>
       </div>
       <div className={classes.content}>
-        {wishListLength === 0 ? <h3>Your Cart Is Empty</h3> : undefined}
+        {wishListLength === 0 ? (
+          <div style={{ maxWidth: "500px" }}>
+            <h3 style={{ fontWeight: "500" }}>Wish List Is Empty</h3>
+            <img
+              style={{ maxWidth: "100%" }}
+              // src="https://static.oxinis.com/healthmug/image/healthmug/empty-wishlist.webp"
+              src="empty-wishlist.webp"
+              alt=""
+            />
+          </div>
+        ) : undefined}
         {wishListItems.map((item) => {
           return (
             <WishListItem

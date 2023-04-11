@@ -117,7 +117,7 @@ function Header() {
               <AiOutlineUser className={classes.icon} />
             </li>
           </ul>
-          <h4 className={["use-auth"]}>Login</h4>
+          <h4 className={["use-auth"]}>Mohamed</h4>
         </div>
       </section>
       <section className={classes.down}></section>
