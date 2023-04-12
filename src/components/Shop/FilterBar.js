@@ -59,6 +59,7 @@ function FilterBar(props) {
     // if (window.screen.width <= 768) {
     //   props.changeFilterState();
     // }
+
     setSelectedBrands((selectedBrands) => {
       if (e.target.checked) {
         return [...selectedBrands, brand];

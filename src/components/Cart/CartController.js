@@ -30,6 +30,7 @@ function CartController() {
           </div>
           <div className={classes["item-length"]}>
             <span>{cartItemLength} Items</span>
+            <button className={classes["clear-cart-btn"]}>Clear Cart</button>
           </div>
         </div>
       </div>
