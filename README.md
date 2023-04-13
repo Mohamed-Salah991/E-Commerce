@@ -14,9 +14,15 @@ Visit the [Live Demo](https://e-commerce-a526b.web.app/) to see the project in a
 
 ## Contact Me
 
-If you have any questions about this project, feel free to reach out to me via LinkedIn:
+If you have any questions about this project, feel free to reach out to me via :
+
+#### LinkedIn
 
 - [Mohamed Salah](https://www.linkedin.com/in/mohamed-salah-a74b5b234/)
+
+#### Email
+
+- mohamed.salah6486@gmail.com
 
 #
 
