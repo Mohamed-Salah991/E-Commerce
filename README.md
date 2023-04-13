@@ -2,13 +2,18 @@
 
 # Table of Contents
 
-- [Description](#description)
+- [Live Demo](#live-demo)
 - [Contact Me](#contact-me)
+- [Description](#description)
 - [Libraries](#libraries)
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
+
+#
+
+## Live Demo
 
 Visit the [Live Demo](https://e-commerce-a526b.web.app/) to see the project in action.
 
@@ -16,13 +21,9 @@ Visit the [Live Demo](https://e-commerce-a526b.web.app/) to see the project in a
 
 If you have any questions about this project, feel free to reach out to me via :
 
-#### LinkedIn
+- LinkedIn: [Mohamed Salah](https://www.linkedin.com/in/mohamed-salah-a74b5b234/)
 
-- [Mohamed Salah](https://www.linkedin.com/in/mohamed-salah-a74b5b234/)
-
-#### Email
-
-- mohamed.salah6486@gmail.com
+- Email: mohamed.salah6486@gmail.com
 
 #
 
