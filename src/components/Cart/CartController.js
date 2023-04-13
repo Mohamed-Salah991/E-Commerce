@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import classes from "./CartController.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { cartActions } from "../../store/Cart";
 import { Link } from "react-router-dom";
 
 import CartItem from "./CartItem";
@@ -9,12 +10,17 @@ import { BsArrowLeft } from "react-icons/bs";
 
 function CartController() {
   const cartItems = useSelector((store) => store.cart.items);
+  const dispatch = useDispatch();
   const cartItemLength = cartItems.length;
   console.log("Cart Item", cartItems);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const ClearCartItems = () => {
+    dispatch(cartActions.clear());
+  };
 
   // price={item.totalPrice}
   return (
@@ -30,7 +36,14 @@ function CartController() {
           </div>
           <div className={classes["item-length"]}>
             <span>{cartItemLength} Items</span>
-            <button className={classes["clear-cart-btn"]}>Clear Cart</button>
+            <button
+              onClick={ClearCartItems}
+              className={`${classes["clear-cart-btn"]} ${
+                cartItemLength === 0 ? classes.empty : undefined
+              }`}
+            >
+              Clear Cart
+            </button>
           </div>
         </div>
       </div>

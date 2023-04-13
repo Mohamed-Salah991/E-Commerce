@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import classes from "./WishListController.module.css";
 import WishListItem from "./WishListItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { wishListActions } from "../../store/Whish-List";
 import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 
 function WishListController() {
   const wishListItems = useSelector((store) => store.wishList.items);
+  const dispatch = useDispatch();
   const wishListLength = wishListItems.length;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const clearWhishListItems = () => {
+    dispatch(wishListActions.clear());
+  };
 
   return (
     <div className={classes.controller}>
@@ -26,6 +32,14 @@ function WishListController() {
           </div>
           <div className={classes["item-length"]}>
             <span>{wishListLength} Items</span>
+            <button
+              onClick={clearWhishListItems}
+              className={`${classes["clear-whish-list-btn"]} ${
+                wishListLength === 0 ? classes.empty : undefined
+              }`}
+            >
+              Clear Whish List
+            </button>
           </div>
         </div>
       </div>
