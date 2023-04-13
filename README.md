@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# E-commerce website with React.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
 
-## Available Scripts
+- [Description](#description)
+- [Contact Me](#contact-me)
+- [Libraries](#libraries)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
+Visit the [Live Demo](https://e-commerce-a526b.web.app/) to see the project in action.
 
-### `npm start`
+## Contact Me
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If you have any questions about this project, feel free to reach out to me via LinkedIn:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Mohamed Salah](https://www.linkedin.com/in/mohamed-salah-a74b5b234/)
 
-### `npm test`
+#
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I have completed the development of my E-Commerce application using React.js! The application is fully responsive and built using pure CSS.
+Rather than relying on a UI framework, I decided to challenge myself by building the application with pure CSS, enabling me to use a framework with confidence in the future.
+You can apply filters based on multiple properties and sort products by price. The search bar is also connected to the shop page, allowing you to apply filters and sort products to the search results.
+The Cart and Wish List functionality allows you to add or remove products from the product page, product item, and quick view.
+I was personally impressed by React's state management and the seamless interaction between components, as well as the Redux store.
+The shop page also features client-side pagination for the displayed products.
+There are two product views available: Grid view and List view. On smaller screens, like mobile devices, the icons that switch between views won't be visible
+I paid close attention to the small details throughout the development process.
 
-### `npm run build`
+#
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Libraries
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React.js
+- React Router Dom
+- Redux/toolkit
+- React icons
+- Swiper Slider
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- Full Responsive ( pure CSS )
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Filter, Sort in Shop page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Search bar connected to the shop page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Product Quick view using React Portal
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Client side pagination
 
-## Learn More
+- Two product views (Grid view, List view)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Cart and Wish List functionality
+  - Add or remove from the product page, product item, and Quick view
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Screenshots
 
-### Code Splitting
+Here are some screenshots from the project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Hero Section
 
-### Analyzing the Bundle Size
+![Hero Section](./public/GitHub%20Images/hero%20section.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Gird view in shop page
 
-### Making a Progressive Web App
+![Shop1](./public/GitHub%20Images/shop1.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### List view in shop page
 
-### Advanced Configuration
+![Shop2](./public/GitHub%20Images/shop2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Pagination
 
-### Deployment
+![Pagination](./public/GitHub%20Images/pagination.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Quick View (with react portal)
 
-### `npm run build` fails to minify
+![Quick View](./public/GitHub%20Images/quick%20view.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Product Details Page
+
+![Details](./public/GitHub%20Images/details.png)
+
+### Cart Page
+
+![Cart](./public/GitHub%20Images/cart.png)
+
+### Wish List Page
+
+![wish List](./public/GitHub%20Images/wish%20list.png)
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [React.js](https://reactjs.org/)
+- [React Router Dom](https://reactrouter.com/)
+- [Redux/toolkit](https://redux-toolkit.js.org/)
+- [React icons](https://react-icons.github.io/react-icons/)
+- [Swiper Slider](https://swiperjs.com/)
+
+## Contact
+
+Mohamed Salah - [Linked In](https://www.linkedin.com/in/mohamed-salah-a74b5b234/)
+
+Project Link: [https://github.com/Mohamed-Salah991/E-Commerce]
+
+<!-- © [Mohamed Salah](https://yourwebsite.com/) -->

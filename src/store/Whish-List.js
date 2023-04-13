@@ -24,7 +24,6 @@ const WhishListSlice = createSlice({
       }
     },
     delete(state, action) {
-      console.log("WElcome");
       const { id } = action.payload;
       state.items = state.items.filter((item) => item.id !== id);
     },

@@ -386,7 +386,6 @@ function ShopController() {
       setProductList(AllProducts);
 
       // data.products.forEach((product) => {
-      //   console.log(product);
       // });
       return data;
     };
@@ -396,7 +395,6 @@ function ShopController() {
   }, []);
 
   useEffect(() => {
-    console.log(searchQuery);
     if (searchQuery) {
       setSearchValue(searchQuery);
       // navigate("/shop", { search: "" });
@@ -447,7 +445,6 @@ function ShopController() {
 
     // Search Value
     let searchValueFilter = [];
-    console.log(searchValue);
     if (searchValue) {
       setFilterItem(searchValue);
       searchValueFilter = filterRateProduct.filter((item) => {

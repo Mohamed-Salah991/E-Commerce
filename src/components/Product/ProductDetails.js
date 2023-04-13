@@ -34,8 +34,6 @@ function ProductDetails(props) {
     wishListItems,
   ]);
 
-  console.log(productItem);
-
   function addToWishList() {
     setExistingInWishList((prev) => !prev);
 

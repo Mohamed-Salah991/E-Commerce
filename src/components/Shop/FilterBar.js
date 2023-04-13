@@ -12,8 +12,6 @@ function FilterBar(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(props.filterItem);
-
     let filteredProduct = props.productsList.filter((product) => {
       if (props.filterItem === "smartphones") {
         return product.category === "smartphones";
@@ -55,7 +53,6 @@ function FilterBar(props) {
 
   const selectedBrandsHandler = (e) => {
     const brand = e.target.value;
-    console.log(brand);
     // if (window.screen.width <= 768) {
     //   props.changeFilterState();
     // }
@@ -71,7 +68,6 @@ function FilterBar(props) {
 
   const selectedRatesHandler = (e) => {
     const rate = e.target.value;
-    console.log(rate);
     // if (window.screen.width <= 768) {
     //   props.changeFilterState();
     // }

@@ -62,7 +62,7 @@
   width: 300px;
 }
 
-.clear-whish-list-btn {
+.clear-wish-list-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +81,7 @@
   font-size: 14px;
   border-radius: 5px;
 }
-.clear-whish-list-btn.empty {
+.clear-wish-list-btn.empty {
   background-color: rgb(203 133 145);
   cursor: no-drop;
 }

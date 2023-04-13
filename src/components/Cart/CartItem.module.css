@@ -1,5 +1,4 @@
 .cart-item {
-  /* border: 2px solid #263041; */
   margin: 10px;
   border-radius: 15px;
   background-color: white;
@@ -42,6 +41,7 @@
   font-size: 18px;
   cursor: pointer;
 }
+
 .text-info h3:hover {
   text-decoration: underline;
 }

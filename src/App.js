@@ -48,9 +48,6 @@ function App() {
       const data = await res.json();
       setProducts(data);
 
-      data.products.forEach((product) => {
-        console.log(product.rating);
-      });
       return data;
     };
 

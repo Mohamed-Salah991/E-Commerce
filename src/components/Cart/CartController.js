@@ -12,7 +12,6 @@ function CartController() {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
   const cartItemLength = cartItems.length;
-  console.log("Cart Item", cartItems);
 
   useEffect(() => {
     window.scrollTo(0, 0);

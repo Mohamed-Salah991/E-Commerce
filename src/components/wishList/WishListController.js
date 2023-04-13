@@ -34,11 +34,11 @@ function WishListController() {
             <span>{wishListLength} Items</span>
             <button
               onClick={clearWhishListItems}
-              className={`${classes["clear-whish-list-btn"]} ${
+              className={`${classes["clear-wish-list-btn"]} ${
                 wishListLength === 0 ? classes.empty : undefined
               }`}
             >
-              Clear Whish List
+              Clear Wish List
             </button>
           </div>
         </div>
