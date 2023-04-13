@@ -25,7 +25,7 @@ If you have any questions about this project, feel free to reach out to me via :
 
 - Email: mohamed.salah6486@gmail.com
 
-#
+## Description
 
 I have completed the development of my E-Commerce application using React.js! The application is fully responsive and built using pure CSS.
 Rather than relying on a UI framework, I decided to challenge myself by building the application with pure CSS, enabling me to use a framework with confidence in the future.
@@ -35,8 +35,6 @@ I was personally impressed by React's state management and the seamless interact
 The shop page also features client-side pagination for the displayed products.
 There are two product views available: Grid view and List view. On smaller screens, like mobile devices, the icons that switch between views won't be visible
 I paid close attention to the small details throughout the development process.
-
-#
 
 ## Libraries
 
