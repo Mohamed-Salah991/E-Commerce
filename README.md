@@ -11,19 +11,18 @@
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
-#
 
 ## Live Demo
 
-Visit the [Live Demo](https://e-commerce-a526b.web.app/) to see the project in action.
+Visit the <a href="https://e-commerce-a526b.web.app/">Live Demo</a> to see the project in action.
 
 ## Contact Me
 
 If you have any questions about this project, feel free to reach out to me via :
 
-- LinkedIn: [Mohamed Salah](https://www.linkedin.com/in/mohamed-salah-a74b5b234/)
+- LinkedIn: <a href="https://www.linkedin.com/in/mohamed-salah-a74b5b234/">Mohamed Salah</a>
 
-- Email: mohamed.salah6486@gmail.com
+- Email: <a href="mailto:mohamed.salah6486@gmail.com">mohamed.salah6486@gmail.com</a>
 
 ## Description
 
@@ -67,35 +66,35 @@ Here are some screenshots from the project:
 
 ### Hero Section
 
-![Hero Section](./public/GitHub%20Images/hero%20section.png)
+<img src="./public/GitHub%20Images/hero%20section.png" alt="Hero Section">
 
 ### Gird view in shop page
 
-![Shop1](./public/GitHub%20Images/shop1.png)
+<img src="./public/GitHub%20Images/shop1.png" alt="Shop 1">
 
 ### List view in shop page
 
-![Shop2](./public/GitHub%20Images/shop2.png)
+<img src="./public/GitHub%20Images/shop2.png" alt="Shop 2">
 
 ### Pagination
 
-![Pagination](./public/GitHub%20Images/pagination.png)
+<img src="./public/GitHub%20Images/pagination.png" alt="Pagination">
 
 ### Quick View (with react portal)
 
-![Quick View](./public/GitHub%20Images/quick%20view.png)
+<img src="./public/GitHub%20Images/quick%20view.png" alt="Quick View">
 
 ### Product Details Page
 
-![Details](./public/GitHub%20Images/details.png)
+<img src="./public/GitHub%20Images/details.png" alt="Product Details Page">
 
 ### Cart Page
 
-![Cart](./public/GitHub%20Images/cart.png)
+<img src="./public/GitHub%20Images/cart.png" alt="Cart Page">
 
 ### Wish List Page
 
-![wish List](./public/GitHub%20Images/wish%20list.png)
+<img src="./public/GitHub%20Images/wish%20list.png" alt="Wish List Page">
 
 ## License
 
@@ -116,3 +115,4 @@ Mohamed Salah - [Linked In](https://www.linkedin.com/in/mohamed-salah-a74b5b234/
 Project Link: [https://github.com/Mohamed-Salah991/E-Commerce]
 
 <!-- © [Mohamed Salah](https://yourwebsite.com/) -->
+
