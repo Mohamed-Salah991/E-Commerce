@@ -22,7 +22,7 @@ If you have any questions about this project, feel free to reach out to me via :
 
 - LinkedIn: <a href="https://www.linkedin.com/in/mohamed-salah-a74b5b234/">Mohamed Salah</a>
 
-- Email: <a href="mailto:mohamed.salah6486@gmail.com">mohamed.salah6486@gmail.com</a>
+- Email: <a href="mailto:mohamedsalah.dev991@gmail.com">mohamedsalah.dev991@gmail.com</a>
 
 ## Description
 
