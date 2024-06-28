@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AllProducts } from "../components/Shop/ShopController";
 
 import ProductDetails from "../components/Product/ProductDetails";
+import { AllProducts } from "../dev-data/AllProducts";
 
 function Details() {
   const [productItem, setProductItem] = useState({});
@@ -13,6 +13,7 @@ function Details() {
     setProductItem(() => {
       return AllProducts.find((item) => item.id === productId);
     });
+    console.log(AllProducts.find((item) => item.id === productId));
   }, [productId]);
 
   useEffect(() => {

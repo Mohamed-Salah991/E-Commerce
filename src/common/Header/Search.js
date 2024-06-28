@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Search.module.css";
 import { Link, useNavigate } from "react-router-dom";
-
-import { AllProducts } from "../../components/Shop/ShopController";
+import { AllProducts } from "../../dev-data/AllProducts";
 
 function Search() {
   const [filteredData, setFilteredData] = useState([]);

@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./QuickView.module.css";
 import ProductDetails from "./ProductDetails";
 import { AiOutlineClose } from "react-icons/ai";
-import { AllProducts } from "../Shop/ShopController";
 import Modal from "../UI/Modal";
+import { AllProducts } from "../../dev-data/AllProducts";
 
 function QuickView(props) {
   let { id } = props;

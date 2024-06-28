@@ -14,6 +14,7 @@ import sliderStyle from "./imageSlider.module.css";
 
 function ProductDetails(props) {
   const { productItem } = props;
+  console.log(productItem);
   const [existingInWishList, setExistingInWishList] = useState();
   const [existingInCart, setExistingItem] = useState();
   const dispatch = useDispatch();
@@ -149,12 +150,7 @@ function ProductDetails(props) {
           {props.quickView || (
             <div className={classes.description}>
               <h3>Description</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
-                nisi reprehenderit cum reiciendis repellendus, aspernatur odit
-                officiis maiores saepe blanditiis sint ipsam, nesciunt impedit
-                dolores. Aliquam explicabo a obcaecati. Perferendis?
-              </p>
+              <p>{productItem.description}</p>
             </div>
           )}
         </div>
