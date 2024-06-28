@@ -12,8 +12,9 @@ const CartSlice = createSlice({
     add(state, action) {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
+
       if (!existingItem) {
-        // item not in the cart
+        // Item not in the cart, add it
         state.items.push({
           id: newItem.id,
           title: newItem.title,
@@ -23,38 +24,59 @@ const CartSlice = createSlice({
           totalPrice: newItem.price,
         });
 
-        state.totalAmount += newItem.price;
+        state.totalAmount = parseFloat(
+          (state.totalAmount + newItem.price).toFixed(2)
+        );
       } else {
-        window.alert("This Item In Your Cart");
+        window.alert("This item is already in your cart.");
       }
     },
     increment(state, action) {
       const { id } = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
-      existingItem.quantity++;
 
-      state.totalAmount += existingItem.price;
-
-      existingItem.totalPrice = existingItem.totalPrice + existingItem.price;
+      if (existingItem) {
+        existingItem.quantity++;
+        existingItem.totalPrice = parseFloat(
+          (existingItem.totalPrice + existingItem.price).toFixed(2)
+        );
+        state.totalAmount = parseFloat(
+          (state.totalAmount + existingItem.price).toFixed(2)
+        );
+      }
     },
     decrement(state, action) {
       const { id } = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
 
-      state.totalAmount -= existingItem.price;
-
-      if (existingItem.quantity === 1) {
-        state.items = state.items.filter((item) => item.id !== id);
-      } else {
-        existingItem.quantity--;
-        existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
+      if (existingItem) {
+        if (existingItem.quantity === 1) {
+          // Remove the item if quantity is 1
+          state.items = state.items.filter((item) => item.id !== id);
+          state.totalAmount = parseFloat(
+            (state.totalAmount - existingItem.price).toFixed(2)
+          );
+        } else {
+          existingItem.quantity--;
+          existingItem.totalPrice = parseFloat(
+            (existingItem.totalPrice - existingItem.price).toFixed(2)
+          );
+          state.totalAmount = parseFloat(
+            (state.totalAmount - existingItem.price).toFixed(2)
+          );
+        }
       }
     },
     delete(state, action) {
       const { id } = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
-      state.items = state.items.filter((item) => item.id !== id);
-      state.totalAmount -= existingItem.totalPrice;
+
+      if (existingItem) {
+        state.items = state.items.filter((item) => item.id !== id);
+        state.totalAmount = parseFloat(
+          (state.totalAmount - existingItem.totalPrice).toFixed(2)
+        );
+      }
     },
     clear(state) {
       state.items = [];
